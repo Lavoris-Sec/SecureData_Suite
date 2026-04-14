@@ -63,9 +63,32 @@ SecureData_Suite_autogen/timestamp: \
 	D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake \
 	D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/3.30.5/CMakeRCCompiler.cmake \
 	D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/3.30.5/CMakeSystem.cmake \
-	D:/Education/Coursework/SecureData_Suite/main.cpp \
-	D:/Education/Coursework/SecureData_Suite/mainwindow.cpp \
-	D:/Education/Coursework/SecureData_Suite/mainwindow.h \
+	D:/Education/Coursework/SecureData_Suite/include/crypto/cipher_base.h \
+	D:/Education/Coursework/SecureData_Suite/include/crypto/cipher_manager.h \
+	D:/Education/Coursework/SecureData_Suite/include/crypto/rsa_cipher.h \
+	D:/Education/Coursework/SecureData_Suite/include/ui/MainWindow.h \
+	D:/Education/Coursework/SecureData_Suite/include/utils/file_cache.h \
+	D:/Education/Coursework/SecureData_Suite/include/utils/translation_manager.h \
+	D:/Education/Coursework/SecureData_Suite/src/crypto/atbash_cipher.cpp \
+	D:/Education/Coursework/SecureData_Suite/src/crypto/caesar_cipher.cpp \
+	D:/Education/Coursework/SecureData_Suite/src/crypto/cipher_base.cpp \
+	D:/Education/Coursework/SecureData_Suite/src/crypto/cipher_manager.cpp \
+	D:/Education/Coursework/SecureData_Suite/src/crypto/huffman_codec.cpp \
+	D:/Education/Coursework/SecureData_Suite/src/crypto/permutation_cipher.cpp \
+	D:/Education/Coursework/SecureData_Suite/src/crypto/rsa_cipher.cpp \
+	D:/Education/Coursework/SecureData_Suite/src/crypto/simple_aes_cipher.cpp \
+	D:/Education/Coursework/SecureData_Suite/src/crypto/vigenere_cipher.cpp \
+	D:/Education/Coursework/SecureData_Suite/src/crypto/xor_cipher.cpp \
+	D:/Education/Coursework/SecureData_Suite/src/main.cpp \
+	D:/Education/Coursework/SecureData_Suite/src/stego/lsb_steganography.cpp \
+	D:/Education/Coursework/SecureData_Suite/src/ui/MainWindow.cpp \
+	D:/Education/Coursework/SecureData_Suite/src/utils/file_cache.cpp \
+	D:/Education/Coursework/SecureData_Suite/src/utils/translation_manager.cpp \
+	D:/Qt/6.10.2/msvc2022_64/include/QtCore/QByteArray \
+	D:/Qt/6.10.2/msvc2022_64/include/QtCore/QObject \
+	D:/Qt/6.10.2/msvc2022_64/include/QtCore/QPointer \
+	D:/Qt/6.10.2/msvc2022_64/include/QtCore/QString \
+	D:/Qt/6.10.2/msvc2022_64/include/QtCore/QTranslator \
 	D:/Qt/6.10.2/msvc2022_64/include/QtCore/q17memory.h \
 	D:/Qt/6.10.2/msvc2022_64/include/QtCore/q20functional.h \
 	D:/Qt/6.10.2/msvc2022_64/include/QtCore/q20iterator.h \
@@ -139,6 +162,7 @@ SecureData_Suite_autogen/timestamp: \
 	D:/Qt/6.10.2/msvc2022_64/include/QtCore/qoverload.h \
 	D:/Qt/6.10.2/msvc2022_64/include/QtCore/qpair.h \
 	D:/Qt/6.10.2/msvc2022_64/include/QtCore/qpoint.h \
+	D:/Qt/6.10.2/msvc2022_64/include/QtCore/qpointer.h \
 	D:/Qt/6.10.2/msvc2022_64/include/QtCore/qprocessordetection.h \
 	D:/Qt/6.10.2/msvc2022_64/include/QtCore/qrect.h \
 	D:/Qt/6.10.2/msvc2022_64/include/QtCore/qrefcount.h \
@@ -180,6 +204,7 @@ SecureData_Suite_autogen/timestamp: \
 	D:/Qt/6.10.2/msvc2022_64/include/QtCore/qtmetamacros.h \
 	D:/Qt/6.10.2/msvc2022_64/include/QtCore/qtnoop.h \
 	D:/Qt/6.10.2/msvc2022_64/include/QtCore/qtpreprocessorsupport.h \
+	D:/Qt/6.10.2/msvc2022_64/include/QtCore/qtranslator.h \
 	D:/Qt/6.10.2/msvc2022_64/include/QtCore/qtresource.h \
 	D:/Qt/6.10.2/msvc2022_64/include/QtCore/qttranslation.h \
 	D:/Qt/6.10.2/msvc2022_64/include/QtCore/qttypetraits.h \
@@ -461,5 +486,5 @@ SecureData_Suite_autogen/timestamp: \
 	D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-MSVC.cmake \
 	D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows.cmake \
 	D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake \
-	D:/Education/Coursework/SecureData_Suite/mainwindow.ui \
+	D:/Education/Coursework/SecureData_Suite/src/ui/MainWindow.ui \
 	D:/Qt/Tools/CMake_64/bin/cmake.exe

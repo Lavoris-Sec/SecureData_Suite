@@ -74,16 +74,16 @@ clean: CMakeFiles\SecureData_Suite_autogen.dir\clean
 # Target rules for target CMakeFiles/SecureData_Suite.dir
 
 # All Build rule for target.
-CMakeFiles\SecureData_Suite.dir\all: CMakeFiles\SecureData_Suite_autogen_timestamp_deps.dir\all
 CMakeFiles\SecureData_Suite.dir\all: CMakeFiles\SecureData_Suite_autogen.dir\all
+CMakeFiles\SecureData_Suite.dir\all: CMakeFiles\SecureData_Suite_autogen_timestamp_deps.dir\all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target SecureData_Suite"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 "Built target SecureData_Suite"
 .PHONY : CMakeFiles\SecureData_Suite.dir\all
 
 # Build rule for subdir invocation for target.
 CMakeFiles\SecureData_Suite.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles 21
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles 0
 .PHONY : CMakeFiles\SecureData_Suite.dir\rule
@@ -156,7 +156,7 @@ CMakeFiles\update_translations.dir\clean:
 CMakeFiles\SecureData_Suite_lrelease.dir\all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite_lrelease.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite_lrelease.dir\depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite_lrelease.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite_lrelease.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=9 "Built target SecureData_Suite_lrelease"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=22 "Built target SecureData_Suite_lrelease"
 .PHONY : CMakeFiles\SecureData_Suite_lrelease.dir\all
 
 # Build rule for subdir invocation for target.
@@ -234,7 +234,7 @@ CMakeFiles\SecureData_Suite_autogen_timestamp_deps.dir\clean:
 CMakeFiles\SecureData_Suite_autogen.dir\all: CMakeFiles\SecureData_Suite_autogen_timestamp_deps.dir\all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite_autogen.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite_autogen.dir\depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite_autogen.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite_autogen.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=8 "Built target SecureData_Suite_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=21 "Built target SecureData_Suite_autogen"
 .PHONY : CMakeFiles\SecureData_Suite_autogen.dir\all
 
 # Build rule for subdir invocation for target.

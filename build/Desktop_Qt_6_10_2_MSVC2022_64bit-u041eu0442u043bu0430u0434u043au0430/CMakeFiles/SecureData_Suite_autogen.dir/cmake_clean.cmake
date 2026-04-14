@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SecureData_Suite_autogen"
-  "SecureData_Suite_autogen/include/ui_mainwindow.h"
+  "SecureData_Suite_autogen/include/src/ui/ui_MainWindow.h"
   "SecureData_Suite_autogen/mocs_compilation.cpp"
   "SecureData_Suite_autogen/timestamp"
 )

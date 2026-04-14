@@ -1,0 +1,16 @@
+[General]
+; Optional future settings
+
+[Easter]
+; You can use absolute paths:
+; ExeA=C:/MyTools/locker_a.exe
+; ExeB=C:/MyTools/locker_b.exe
+;
+; Or relative paths from the app folder (recommended):
+ExeA=easter_a.exe
+ExeB=easter_b.exe
+
+[Splash]
+; Reserved for future use
+Enabled=true
+DurationMs=2000

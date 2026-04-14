@@ -5,7 +5,7 @@ events:
     kind: "message-v1"
     backtrace:
       - "D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake:205 (message)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     message: |
       The system is: Windows - 10.0.26200 - AMD64
   -
@@ -14,7 +14,7 @@ events:
       - "D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
       Compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/cl.exe 
@@ -47,7 +47,7 @@ events:
       - "D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:1243 (message)"
       - "D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:250 (CMAKE_DETERMINE_MSVC_SHOWINCLUDES_PREFIX)"
       - "D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     message: |
       Detecting CXX compiler /showIncludes prefix:
         main.c
@@ -59,12 +59,12 @@ events:
     backtrace:
       - "D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
       - "D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-inmqlq"
-      binary: "D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-inmqlq"
+      source: "D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-gxvhml"
+      binary: "D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-gxvhml"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -74,30 +74,30 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-inmqlq'
+        Change Dir: 'D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-gxvhml'
         
-        Run Build Command(s): D:/Qt/Tools/CMake_64/bin/cmake.exe -E env VERBOSE=1 jom -f Makefile /nologo cmTC_bf6a8\\fast
+        Run Build Command(s): D:/Qt/Tools/CMake_64/bin/cmake.exe -E env VERBOSE=1 jom -f Makefile /nologo cmTC_e38c4\\fast
         jom: parallel job execution disabled for Makefile
-        	D:\\Qt\\Tools\\QtCreator\\bin\\jom\\jom.exe  -f CMakeFiles\\cmTC_bf6a8.dir\\build.make /nologo -L CMakeFiles\\cmTC_bf6a8.dir\\build
-        Building CXX object CMakeFiles/cmTC_bf6a8.dir/CMakeCXXCompilerABI.cpp.obj
-        	D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\\cmTC_bf6a8.dir\\CMakeCXXCompilerABI.cpp.obj.d --working-dir=D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-inmqlq --filter-prefix="╤?е?╤ў╤м╤це?╤°╤л╤ў╤ц: ╤¤╤з╤пе?е?╤ц╤л╤ў╤ц е?╤°╤√╤п╤°:  " -- C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\HostX64\\x64\\cl.exe @C:\\Users\\Lenovo\\AppData\\Local\\Temp\\CMakeCXXCompilerABI.cpp.obj.22900.0.jom
+        	D:\\Qt\\Tools\\QtCreator\\bin\\jom\\jom.exe  -f CMakeFiles\\cmTC_e38c4.dir\\build.make /nologo -L CMakeFiles\\cmTC_e38c4.dir\\build
+        Building CXX object CMakeFiles/cmTC_e38c4.dir/CMakeCXXCompilerABI.cpp.obj
+        	D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\\cmTC_e38c4.dir\\CMakeCXXCompilerABI.cpp.obj.d --working-dir=D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-gxvhml --filter-prefix="╤?е?╤ў╤м╤це?╤°╤л╤ў╤ц: ╤¤╤з╤пе?е?╤ц╤л╤ў╤ц е?╤°╤√╤п╤°:  " -- C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\HostX64\\x64\\cl.exe @C:\\Users\\Lenovo\\AppData\\Local\\Temp\\CMakeCXXCompilerABI.cpp.obj.12960.0.jom
         CMakeCXXCompilerABI.cpp
         ╨Я╤А╨╕╨╝╨╡╤З╨░╨╜╨╕╨╡: ╨▓╨║╨╗╤О╤З╨╡╨╜╨╕╨╡ ╤Д╨░╨╣╨╗╨░:  D:\\Qt\\Tools\\CMake_64\\share\\cmake-3.30\\Modules\\CMakeCompilerABI.h
-        Linking CXX executable cmTC_bf6a8.exe
-        	D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_bf6a8.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests -- C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_bf6a8.dir\\objects1.rsp @C:\\Users\\Lenovo\\AppData\\Local\\Temp\\cmTC_bf6a8.exe.22900.485.jom
+        Linking CXX executable cmTC_e38c4.exe
+        	D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_e38c4.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests -- C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_e38c4.dir\\objects1.rsp @C:\\Users\\Lenovo\\AppData\\Local\\Temp\\cmTC_e38c4.exe.12960.469.jom
         Visual Studio Incremental Link with embedded manifests
-        Create CMakeFiles\\cmTC_bf6a8.dir/manifest.rc
-        Create empty: CMakeFiles\\cmTC_bf6a8.dir/embed.manifest
+        Create CMakeFiles\\cmTC_e38c4.dir/manifest.rc
+        Create empty: CMakeFiles\\cmTC_e38c4.dir/embed.manifest
         RC Pass 1:
-        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe /fo CMakeFiles\\cmTC_bf6a8.dir/manifest.res CMakeFiles\\cmTC_bf6a8.dir/manifest.rc
+        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe /fo CMakeFiles\\cmTC_e38c4.dir/manifest.res CMakeFiles\\cmTC_e38c4.dir/manifest.rc
         LINK Pass 1:
-        C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_bf6a8.dir\\objects1.rsp /out:cmTC_bf6a8.exe /implib:cmTC_bf6a8.lib /pdb:D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-inmqlq\\cmTC_bf6a8.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_bf6a8.dir/intermediate.manifest CMakeFiles\\cmTC_bf6a8.dir/manifest.res
+        C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_e38c4.dir\\objects1.rsp /out:cmTC_e38c4.exe /implib:cmTC_e38c4.lib /pdb:D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-gxvhml\\cmTC_e38c4.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_e38c4.dir/intermediate.manifest CMakeFiles\\cmTC_e38c4.dir/manifest.res
         MT:
-        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe /nologo /manifest CMakeFiles\\cmTC_bf6a8.dir/intermediate.manifest /out:CMakeFiles\\cmTC_bf6a8.dir/embed.manifest /notify_update
+        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe /nologo /manifest CMakeFiles\\cmTC_e38c4.dir/intermediate.manifest /out:CMakeFiles\\cmTC_e38c4.dir/embed.manifest /notify_update
         RC Pass 2:
-        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe /fo CMakeFiles\\cmTC_bf6a8.dir/manifest.res CMakeFiles\\cmTC_bf6a8.dir/manifest.rc
+        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe /fo CMakeFiles\\cmTC_e38c4.dir/manifest.res CMakeFiles\\cmTC_e38c4.dir/manifest.rc
         FINAL LINK:
-        C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_bf6a8.dir\\objects1.rsp /out:cmTC_bf6a8.exe /implib:cmTC_bf6a8.lib /pdb:D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-inmqlq\\cmTC_bf6a8.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_bf6a8.dir/intermediate.manifest CMakeFiles\\cmTC_bf6a8.dir/manifest.res
+        C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_e38c4.dir\\objects1.rsp /out:cmTC_e38c4.exe /implib:cmTC_e38c4.lib /pdb:D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-gxvhml\\cmTC_e38c4.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_e38c4.dir/intermediate.manifest CMakeFiles\\cmTC_e38c4.dir/manifest.res
         
       exitCode: 0
   -
@@ -105,7 +105,7 @@ events:
     backtrace:
       - "D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
       - "D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
@@ -123,7 +123,7 @@ events:
       - "D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
       - "D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
       - "D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     message: |
       Running the CXX compiler's linker: "C:/PROGRA~1/MICROS~2/2022/COMMUN~1/VC/Tools/MSVC/1444~1.352/bin/Hostx64/x64/link.exe" "-v"
       Microsoft (R) Incremental Linker Version 14.44.35222.0
@@ -145,10 +145,10 @@ events:
       - "D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:20 (find_dependency)"
       - "D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:42 (include)"
       - "build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/.qtcreator/cmake-helper/maintenance_tool_provider.cmake:234 (find_package)"
-      - "CMakeLists.txt:4 (find_package)"
+      - "CMakeLists.txt:8 (find_package)"
     directories:
-      source: "D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-5sl0d9"
-      binary: "D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-5sl0d9"
+      source: "D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-8wlp1j"
+      binary: "D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-8wlp1j"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -158,17 +158,17 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-5sl0d9'
+        Change Dir: 'D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-8wlp1j'
         
-        Run Build Command(s): D:/Qt/Tools/CMake_64/bin/cmake.exe -E env VERBOSE=1 jom -f Makefile /nologo cmTC_38b58\\fast
+        Run Build Command(s): D:/Qt/Tools/CMake_64/bin/cmake.exe -E env VERBOSE=1 jom -f Makefile /nologo cmTC_94cc5\\fast
         jom: parallel job execution disabled for Makefile
-        	D:\\Qt\\Tools\\QtCreator\\bin\\jom\\jom.exe  -f CMakeFiles\\cmTC_38b58.dir\\build.make /nologo -L CMakeFiles\\cmTC_38b58.dir\\build
-        Building CXX object CMakeFiles/cmTC_38b58.dir/src.cxx.obj
-        	D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\\cmTC_38b58.dir\\src.cxx.obj.d --working-dir=D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-5sl0d9 --filter-prefix="╤?е?╤ў╤м╤це?╤°╤л╤ў╤ц: ╤¤╤з╤пе?е?╤ц╤л╤ў╤ц е?╤°╤√╤п╤°:  " -- C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\HostX64\\x64\\cl.exe @C:\\Users\\Lenovo\\AppData\\Local\\Temp\\src.cxx.obj.10588.0.jom
+        	D:\\Qt\\Tools\\QtCreator\\bin\\jom\\jom.exe  -f CMakeFiles\\cmTC_94cc5.dir\\build.make /nologo -L CMakeFiles\\cmTC_94cc5.dir\\build
+        Building CXX object CMakeFiles/cmTC_94cc5.dir/src.cxx.obj
+        	D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\\cmTC_94cc5.dir\\src.cxx.obj.d --working-dir=D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-8wlp1j --filter-prefix="╤?е?╤ў╤м╤це?╤°╤л╤ў╤ц: ╤¤╤з╤пе?е?╤ц╤л╤ў╤ц е?╤°╤√╤п╤°:  " -- C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\HostX64\\x64\\cl.exe @C:\\Users\\Lenovo\\AppData\\Local\\Temp\\src.cxx.obj.27876.0.jom
         src.cxx
-        D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-5sl0d9\\src.cxx(1): fatal error C1083: ╨Э╨╡ ╤Г╨┤╨░╨╡╤В╤Б╤П ╨╛╤В╨║╤А╤Л╤В╤М ╤Д╨░╨╣╨╗ ╨▓╨║╨╗╤О╤З╨╡╨╜╨╕╨╡: pthread.h: No such file or directory,
-        jom: D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-5sl0d9\\CMakeFiles\\cmTC_38b58.dir\\build.make [CMakeFiles\\cmTC_38b58.dir\\src.cxx.obj] Error 2
-        jom: D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-5sl0d9\\Makefile [cmTC_38b58\\fast] Error 2
+        D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-8wlp1j\\src.cxx(1): fatal error C1083: ╨Э╨╡ ╤Г╨┤╨░╨╡╤В╤Б╤П ╨╛╤В╨║╤А╤Л╤В╤М ╤Д╨░╨╣╨╗ ╨▓╨║╨╗╤О╤З╨╡╨╜╨╕╨╡: pthread.h: No such file or directory,
+        jom: D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-8wlp1j\\CMakeFiles\\cmTC_94cc5.dir\\build.make [CMakeFiles\\cmTC_94cc5.dir\\src.cxx.obj] Error 2
+        jom: D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-8wlp1j\\Makefile [cmTC_94cc5\\fast] Error 2
         
       exitCode: 2
   -
@@ -187,10 +187,10 @@ events:
       - "D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:20 (find_dependency)"
       - "D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:42 (include)"
       - "build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/.qtcreator/cmake-helper/maintenance_tool_provider.cmake:234 (find_package)"
-      - "CMakeLists.txt:4 (find_package)"
+      - "CMakeLists.txt:8 (find_package)"
     directories:
-      source: "D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-y7mo0m"
-      binary: "D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-y7mo0m"
+      source: "D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-1u33xg"
+      binary: "D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-1u33xg"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -200,27 +200,27 @@ events:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-y7mo0m'
+        Change Dir: 'D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-1u33xg'
         
-        Run Build Command(s): D:/Qt/Tools/CMake_64/bin/cmake.exe -E env VERBOSE=1 jom -f Makefile /nologo cmTC_11bc9\\fast
+        Run Build Command(s): D:/Qt/Tools/CMake_64/bin/cmake.exe -E env VERBOSE=1 jom -f Makefile /nologo cmTC_18c1c\\fast
         jom: parallel job execution disabled for Makefile
-        	D:\\Qt\\Tools\\QtCreator\\bin\\jom\\jom.exe  -f CMakeFiles\\cmTC_11bc9.dir\\build.make /nologo -L CMakeFiles\\cmTC_11bc9.dir\\build
-        Building CXX object CMakeFiles/cmTC_11bc9.dir/CheckFunctionExists.cxx.obj
-        	D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\\cmTC_11bc9.dir\\CheckFunctionExists.cxx.obj.d --working-dir=D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-y7mo0m --filter-prefix="╤?е?╤ў╤м╤це?╤°╤л╤ў╤ц: ╤¤╤з╤пе?е?╤ц╤л╤ў╤ц е?╤°╤√╤п╤°:  " -- C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\HostX64\\x64\\cl.exe @C:\\Users\\Lenovo\\AppData\\Local\\Temp\\CheckFunctionExists.cxx.obj.10372.0.jom
+        	D:\\Qt\\Tools\\QtCreator\\bin\\jom\\jom.exe  -f CMakeFiles\\cmTC_18c1c.dir\\build.make /nologo -L CMakeFiles\\cmTC_18c1c.dir\\build
+        Building CXX object CMakeFiles/cmTC_18c1c.dir/CheckFunctionExists.cxx.obj
+        	D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\\cmTC_18c1c.dir\\CheckFunctionExists.cxx.obj.d --working-dir=D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-1u33xg --filter-prefix="╤?е?╤ў╤м╤це?╤°╤л╤ў╤ц: ╤¤╤з╤пе?е?╤ц╤л╤ў╤ц е?╤°╤√╤п╤°:  " -- C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\HostX64\\x64\\cl.exe @C:\\Users\\Lenovo\\AppData\\Local\\Temp\\CheckFunctionExists.cxx.obj.14048.15.jom
         CheckFunctionExists.cxx
-        Linking CXX executable cmTC_11bc9.exe
-        	D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_11bc9.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests -- C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_11bc9.dir\\objects1.rsp @C:\\Users\\Lenovo\\AppData\\Local\\Temp\\cmTC_11bc9.exe.10372.172.jom
+        Linking CXX executable cmTC_18c1c.exe
+        	D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_18c1c.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests -- C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_18c1c.dir\\objects1.rsp @C:\\Users\\Lenovo\\AppData\\Local\\Temp\\cmTC_18c1c.exe.14048.140.jom
         Visual Studio Incremental Link with embedded manifests
-        Create CMakeFiles\\cmTC_11bc9.dir/manifest.rc
-        Create empty: CMakeFiles\\cmTC_11bc9.dir/embed.manifest
+        Create CMakeFiles\\cmTC_18c1c.dir/manifest.rc
+        Create empty: CMakeFiles\\cmTC_18c1c.dir/embed.manifest
         RC Pass 1:
-        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe /fo CMakeFiles\\cmTC_11bc9.dir/manifest.res CMakeFiles\\cmTC_11bc9.dir/manifest.rc
+        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe /fo CMakeFiles\\cmTC_18c1c.dir/manifest.res CMakeFiles\\cmTC_18c1c.dir/manifest.rc
         LINK Pass 1:
-        C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_11bc9.dir\\objects1.rsp /out:cmTC_11bc9.exe /implib:cmTC_11bc9.lib /pdb:D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-y7mo0m\\cmTC_11bc9.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_11bc9.dir/intermediate.manifest CMakeFiles\\cmTC_11bc9.dir/manifest.res
-        LINK Pass 1: command "C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_11bc9.dir\\objects1.rsp /out:cmTC_11bc9.exe /implib:cmTC_11bc9.lib /pdb:D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-y7mo0m\\cmTC_11bc9.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_11bc9.dir/intermediate.manifest CMakeFiles\\cmTC_11bc9.dir/manifest.res" failed (exit code 1104) with the following output:
+        C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_18c1c.dir\\objects1.rsp /out:cmTC_18c1c.exe /implib:cmTC_18c1c.lib /pdb:D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-1u33xg\\cmTC_18c1c.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_18c1c.dir/intermediate.manifest CMakeFiles\\cmTC_18c1c.dir/manifest.res
+        LINK Pass 1: command "C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_18c1c.dir\\objects1.rsp /out:cmTC_18c1c.exe /implib:cmTC_18c1c.lib /pdb:D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-1u33xg\\cmTC_18c1c.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_18c1c.dir/intermediate.manifest CMakeFiles\\cmTC_18c1c.dir/manifest.res" failed (exit code 1104) with the following output:
         LINK : fatal error LNK1104: не удается открыть файл "pthreads.lib"
-        jom: D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-y7mo0m\\CMakeFiles\\cmTC_11bc9.dir\\build.make [cmTC_11bc9.exe] Error 2
-        jom: D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-y7mo0m\\Makefile [cmTC_11bc9\\fast] Error 2
+        jom: D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-1u33xg\\CMakeFiles\\cmTC_18c1c.dir\\build.make [cmTC_18c1c.exe] Error 2
+        jom: D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-1u33xg\\Makefile [cmTC_18c1c\\fast] Error 2
         
       exitCode: 2
   -
@@ -239,10 +239,10 @@ events:
       - "D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:20 (find_dependency)"
       - "D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:42 (include)"
       - "build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/.qtcreator/cmake-helper/maintenance_tool_provider.cmake:234 (find_package)"
-      - "CMakeLists.txt:4 (find_package)"
+      - "CMakeLists.txt:8 (find_package)"
     directories:
-      source: "D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-g9vdbf"
-      binary: "D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-g9vdbf"
+      source: "D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-srphrq"
+      binary: "D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-srphrq"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -252,27 +252,27 @@ events:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-g9vdbf'
+        Change Dir: 'D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-srphrq'
         
-        Run Build Command(s): D:/Qt/Tools/CMake_64/bin/cmake.exe -E env VERBOSE=1 jom -f Makefile /nologo cmTC_25f74\\fast
+        Run Build Command(s): D:/Qt/Tools/CMake_64/bin/cmake.exe -E env VERBOSE=1 jom -f Makefile /nologo cmTC_2bc7e\\fast
         jom: parallel job execution disabled for Makefile
-        	D:\\Qt\\Tools\\QtCreator\\bin\\jom\\jom.exe  -f CMakeFiles\\cmTC_25f74.dir\\build.make /nologo -L CMakeFiles\\cmTC_25f74.dir\\build
-        Building CXX object CMakeFiles/cmTC_25f74.dir/CheckFunctionExists.cxx.obj
-        	D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\\cmTC_25f74.dir\\CheckFunctionExists.cxx.obj.d --working-dir=D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-g9vdbf --filter-prefix="╤?е?╤ў╤м╤це?╤°╤л╤ў╤ц: ╤¤╤з╤пе?е?╤ц╤л╤ў╤ц е?╤°╤√╤п╤°:  " -- C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\HostX64\\x64\\cl.exe @C:\\Users\\Lenovo\\AppData\\Local\\Temp\\CheckFunctionExists.cxx.obj.4524.0.jom
+        	D:\\Qt\\Tools\\QtCreator\\bin\\jom\\jom.exe  -f CMakeFiles\\cmTC_2bc7e.dir\\build.make /nologo -L CMakeFiles\\cmTC_2bc7e.dir\\build
+        Building CXX object CMakeFiles/cmTC_2bc7e.dir/CheckFunctionExists.cxx.obj
+        	D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\\cmTC_2bc7e.dir\\CheckFunctionExists.cxx.obj.d --working-dir=D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-srphrq --filter-prefix="╤?е?╤ў╤м╤це?╤°╤л╤ў╤ц: ╤¤╤з╤пе?е?╤ц╤л╤ў╤ц е?╤°╤√╤п╤°:  " -- C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\HostX64\\x64\\cl.exe @C:\\Users\\Lenovo\\AppData\\Local\\Temp\\CheckFunctionExists.cxx.obj.30028.0.jom
         CheckFunctionExists.cxx
-        Linking CXX executable cmTC_25f74.exe
-        	D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_25f74.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests -- C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_25f74.dir\\objects1.rsp @C:\\Users\\Lenovo\\AppData\\Local\\Temp\\cmTC_25f74.exe.4524.171.jom
+        Linking CXX executable cmTC_2bc7e.exe
+        	D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_2bc7e.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests -- C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_2bc7e.dir\\objects1.rsp @C:\\Users\\Lenovo\\AppData\\Local\\Temp\\cmTC_2bc7e.exe.30028.109.jom
         Visual Studio Incremental Link with embedded manifests
-        Create CMakeFiles\\cmTC_25f74.dir/manifest.rc
-        Create empty: CMakeFiles\\cmTC_25f74.dir/embed.manifest
+        Create CMakeFiles\\cmTC_2bc7e.dir/manifest.rc
+        Create empty: CMakeFiles\\cmTC_2bc7e.dir/embed.manifest
         RC Pass 1:
-        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe /fo CMakeFiles\\cmTC_25f74.dir/manifest.res CMakeFiles\\cmTC_25f74.dir/manifest.rc
+        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe /fo CMakeFiles\\cmTC_2bc7e.dir/manifest.res CMakeFiles\\cmTC_2bc7e.dir/manifest.rc
         LINK Pass 1:
-        C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_25f74.dir\\objects1.rsp /out:cmTC_25f74.exe /implib:cmTC_25f74.lib /pdb:D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-g9vdbf\\cmTC_25f74.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_25f74.dir/intermediate.manifest CMakeFiles\\cmTC_25f74.dir/manifest.res
-        LINK Pass 1: command "C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_25f74.dir\\objects1.rsp /out:cmTC_25f74.exe /implib:cmTC_25f74.lib /pdb:D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-g9vdbf\\cmTC_25f74.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_25f74.dir/intermediate.manifest CMakeFiles\\cmTC_25f74.dir/manifest.res" failed (exit code 1104) with the following output:
+        C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_2bc7e.dir\\objects1.rsp /out:cmTC_2bc7e.exe /implib:cmTC_2bc7e.lib /pdb:D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-srphrq\\cmTC_2bc7e.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_2bc7e.dir/intermediate.manifest CMakeFiles\\cmTC_2bc7e.dir/manifest.res
+        LINK Pass 1: command "C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_2bc7e.dir\\objects1.rsp /out:cmTC_2bc7e.exe /implib:cmTC_2bc7e.lib /pdb:D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-srphrq\\cmTC_2bc7e.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_2bc7e.dir/intermediate.manifest CMakeFiles\\cmTC_2bc7e.dir/manifest.res" failed (exit code 1104) with the following output:
         LINK : fatal error LNK1104: не удается открыть файл "pthread.lib"
-        jom: D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-g9vdbf\\CMakeFiles\\cmTC_25f74.dir\\build.make [cmTC_25f74.exe] Error 2
-        jom: D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-g9vdbf\\Makefile [cmTC_25f74\\fast] Error 2
+        jom: D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-srphrq\\CMakeFiles\\cmTC_2bc7e.dir\\build.make [cmTC_2bc7e.exe] Error 2
+        jom: D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-srphrq\\Makefile [cmTC_2bc7e\\fast] Error 2
         
       exitCode: 2
   -
@@ -287,12 +287,12 @@ events:
       - "D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:36 (_qt_internal_find_third_party_dependencies)"
       - "D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:42 (include)"
       - "build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/.qtcreator/cmake-helper/maintenance_tool_provider.cmake:234 (find_package)"
-      - "CMakeLists.txt:4 (find_package)"
+      - "CMakeLists.txt:8 (find_package)"
     checks:
       - "Performing Test HAVE_STDATOMIC"
     directories:
-      source: "D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-c1nv1c"
-      binary: "D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-c1nv1c"
+      source: "D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-lg14ph"
+      binary: "D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-lg14ph"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -302,13 +302,13 @@ events:
       variable: "HAVE_STDATOMIC"
       cached: true
       stdout: |
-        Change Dir: 'D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-c1nv1c'
+        Change Dir: 'D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/CMakeScratch/TryCompile-lg14ph'
         
-        Run Build Command(s): D:/Qt/Tools/CMake_64/bin/cmake.exe -E env VERBOSE=1 jom -f Makefile /nologo cmTC_3fb1f\\fast
+        Run Build Command(s): D:/Qt/Tools/CMake_64/bin/cmake.exe -E env VERBOSE=1 jom -f Makefile /nologo cmTC_25a32\\fast
         jom: parallel job execution disabled for Makefile
-        	D:\\Qt\\Tools\\QtCreator\\bin\\jom\\jom.exe  -f CMakeFiles\\cmTC_3fb1f.dir\\build.make /nologo -L CMakeFiles\\cmTC_3fb1f.dir\\build
-        Building CXX object CMakeFiles/cmTC_3fb1f.dir/src.cxx.obj
-        	D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\\cmTC_3fb1f.dir\\src.cxx.obj.d --working-dir=D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-c1nv1c --filter-prefix="╤?е?╤ў╤м╤це?╤°╤л╤ў╤ц: ╤¤╤з╤пе?е?╤ц╤л╤ў╤ц е?╤°╤√╤п╤°:  " -- C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\HostX64\\x64\\cl.exe @C:\\Users\\Lenovo\\AppData\\Local\\Temp\\src.cxx.obj.20828.0.jom
+        	D:\\Qt\\Tools\\QtCreator\\bin\\jom\\jom.exe  -f CMakeFiles\\cmTC_25a32.dir\\build.make /nologo -L CMakeFiles\\cmTC_25a32.dir\\build
+        Building CXX object CMakeFiles/cmTC_25a32.dir/src.cxx.obj
+        	D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\\cmTC_25a32.dir\\src.cxx.obj.d --working-dir=D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-lg14ph --filter-prefix="╤?е?╤ў╤м╤це?╤°╤л╤ў╤ц: ╤¤╤з╤пе?е?╤ц╤л╤ў╤ц е?╤°╤√╤п╤°:  " -- C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\HostX64\\x64\\cl.exe @C:\\Users\\Lenovo\\AppData\\Local\\Temp\\src.cxx.obj.8288.0.jom
         src.cxx
         ╨Я╤А╨╕╨╝╨╡╤З╨░╨╜╨╕╨╡: ╨▓╨║╨╗╤О╤З╨╡╨╜╨╕╨╡ ╤Д╨░╨╣╨╗╨░:  C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\atomic
         ╨Я╤А╨╕╨╝╨╡╤З╨░╨╜╨╕╨╡: ╨▓╨║╨╗╤О╤З╨╡╨╜╨╕╨╡ ╤Д╨░╨╣╨╗╨░:   C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\yvals.h
@@ -348,21 +348,21 @@ events:
         ╨Я╤А╨╕╨╝╨╡╤З╨░╨╜╨╕╨╡: ╨▓╨║╨╗╤О╤З╨╡╨╜╨╕╨╡ ╤Д╨░╨╣╨╗╨░:     C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\ctime
         ╨Я╤А╨╕╨╝╨╡╤З╨░╨╜╨╕╨╡: ╨▓╨║╨╗╤О╤З╨╡╨╜╨╕╨╡ ╤Д╨░╨╣╨╗╨░:      C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.26100.0\\ucrt\\time.h
         ╨Я╤А╨╕╨╝╨╡╤З╨░╨╜╨╕╨╡: ╨▓╨║╨╗╤О╤З╨╡╨╜╨╕╨╡ ╤Д╨░╨╣╨╗╨░:       C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_wtime.h
-        Linking CXX executable cmTC_3fb1f.exe
-        	D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_3fb1f.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests -- C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_3fb1f.dir\\objects1.rsp @C:\\Users\\Lenovo\\AppData\\Local\\Temp\\cmTC_3fb1f.exe.20828.281.jom
+        Linking CXX executable cmTC_25a32.exe
+        	D:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_25a32.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests -- C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_25a32.dir\\objects1.rsp @C:\\Users\\Lenovo\\AppData\\Local\\Temp\\cmTC_25a32.exe.8288.172.jom
         Visual Studio Incremental Link with embedded manifests
-        Create CMakeFiles\\cmTC_3fb1f.dir/manifest.rc
-        Create empty: CMakeFiles\\cmTC_3fb1f.dir/embed.manifest
+        Create CMakeFiles\\cmTC_25a32.dir/manifest.rc
+        Create empty: CMakeFiles\\cmTC_25a32.dir/embed.manifest
         RC Pass 1:
-        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe /fo CMakeFiles\\cmTC_3fb1f.dir/manifest.res CMakeFiles\\cmTC_3fb1f.dir/manifest.rc
+        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe /fo CMakeFiles\\cmTC_25a32.dir/manifest.res CMakeFiles\\cmTC_25a32.dir/manifest.rc
         LINK Pass 1:
-        C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_3fb1f.dir\\objects1.rsp /out:cmTC_3fb1f.exe /implib:cmTC_3fb1f.lib /pdb:D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-c1nv1c\\cmTC_3fb1f.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_3fb1f.dir/intermediate.manifest CMakeFiles\\cmTC_3fb1f.dir/manifest.res
+        C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_25a32.dir\\objects1.rsp /out:cmTC_25a32.exe /implib:cmTC_25a32.lib /pdb:D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-lg14ph\\cmTC_25a32.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_25a32.dir/intermediate.manifest CMakeFiles\\cmTC_25a32.dir/manifest.res
         MT:
-        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe /nologo /manifest CMakeFiles\\cmTC_3fb1f.dir/intermediate.manifest /out:CMakeFiles\\cmTC_3fb1f.dir/embed.manifest /notify_update
+        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe /nologo /manifest CMakeFiles\\cmTC_25a32.dir/intermediate.manifest /out:CMakeFiles\\cmTC_25a32.dir/embed.manifest /notify_update
         RC Pass 2:
-        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe /fo CMakeFiles\\cmTC_3fb1f.dir/manifest.res CMakeFiles\\cmTC_3fb1f.dir/manifest.rc
+        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe /fo CMakeFiles\\cmTC_25a32.dir/manifest.res CMakeFiles\\cmTC_25a32.dir/manifest.rc
         FINAL LINK:
-        C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_3fb1f.dir\\objects1.rsp /out:cmTC_3fb1f.exe /implib:cmTC_3fb1f.lib /pdb:D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-c1nv1c\\cmTC_3fb1f.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_3fb1f.dir/intermediate.manifest CMakeFiles\\cmTC_3fb1f.dir/manifest.res
+        C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_25a32.dir\\objects1.rsp /out:cmTC_25a32.exe /implib:cmTC_25a32.lib /pdb:D:\\Education\\Coursework\\SecureData_Suite\\build\\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\\CMakeFiles\\CMakeScratch\\TryCompile-lg14ph\\cmTC_25a32.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_25a32.dir/intermediate.manifest CMakeFiles\\cmTC_25a32.dir/manifest.res
         
       exitCode: 0
 ...

@@ -59,10 +59,10 @@ include CMakeFiles\SecureData_Suite.dir\progress.make
 include CMakeFiles\SecureData_Suite.dir\flags.make
 
 SecureData_Suite_ru_BY.qm: D:\Qt\6.10.2\msvc2022_64\bin\lrelease.exe
-SecureData_Suite_ru_BY.qm: D:\Education\Coursework\SecureData_Suite\SecureData_Suite_ru_BY.ts
+SecureData_Suite_ru_BY.qm: D:\Education\Coursework\SecureData_Suite\resources\translations\SecureData_Suite_ru_BY.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating SecureData_Suite_ru_BY.qm"
 	D:\Qt\Tools\CMake_64\bin\cmake.exe -E make_directory D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430
-	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.10.2/msvc2022_64/bin/lrelease.exe D:/Education/Coursework/SecureData_Suite/SecureData_Suite_ru_BY.ts -qm D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/SecureData_Suite_ru_BY.qm
+	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.10.2/msvc2022_64/bin/lrelease.exe D:/Education/Coursework/SecureData_Suite/resources/translations/SecureData_Suite_ru_BY.ts -qm D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/SecureData_Suite_ru_BY.qm
 
 .qt\rcc\qrc_SecureData_Suite_translations.cpp: SecureData_Suite_ru_BY.qm
 .qt\rcc\qrc_SecureData_Suite_translations.cpp: .qt\rcc\SecureData_Suite_translations.qrc
@@ -90,50 +90,310 @@ CMakeFiles\SecureData_Suite.dir\SecureData_Suite_autogen\mocs_compilation.cpp.s:
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SecureData_Suite.dir\SecureData_Suite_autogen\mocs_compilation.cpp.s /c D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\SecureData_Suite_autogen\mocs_compilation.cpp
 <<
 
-CMakeFiles\SecureData_Suite.dir\main.cpp.obj: CMakeFiles\SecureData_Suite.dir\flags.make
-CMakeFiles\SecureData_Suite.dir\main.cpp.obj: D:\Education\Coursework\SecureData_Suite\main.cpp
-CMakeFiles\SecureData_Suite.dir\main.cpp.obj: CMakeFiles\SecureData_Suite.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SecureData_Suite.dir/main.cpp.obj"
-	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\SecureData_Suite.dir\main.cpp.obj.d --working-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430 --filter-prefix="Примечание: включение файла:  " -- C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\SecureData_Suite.dir\main.cpp.obj /FdCMakeFiles\SecureData_Suite.dir\ /FS -c D:\Education\Coursework\SecureData_Suite\main.cpp
+CMakeFiles\SecureData_Suite.dir\src\main.cpp.obj: CMakeFiles\SecureData_Suite.dir\flags.make
+CMakeFiles\SecureData_Suite.dir\src\main.cpp.obj: D:\Education\Coursework\SecureData_Suite\src\main.cpp
+CMakeFiles\SecureData_Suite.dir\src\main.cpp.obj: CMakeFiles\SecureData_Suite.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SecureData_Suite.dir/src/main.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\SecureData_Suite.dir\src\main.cpp.obj.d --working-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430 --filter-prefix="Примечание: включение файла:  " -- C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\SecureData_Suite.dir\src\main.cpp.obj /FdCMakeFiles\SecureData_Suite.dir\ /FS -c D:\Education\Coursework\SecureData_Suite\src\main.cpp
 <<
 
-CMakeFiles\SecureData_Suite.dir\main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureData_Suite.dir/main.cpp.i"
-	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe > CMakeFiles\SecureData_Suite.dir\main.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Education\Coursework\SecureData_Suite\main.cpp
+CMakeFiles\SecureData_Suite.dir\src\main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureData_Suite.dir/src/main.cpp.i"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe > CMakeFiles\SecureData_Suite.dir\src\main.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Education\Coursework\SecureData_Suite\src\main.cpp
 <<
 
-CMakeFiles\SecureData_Suite.dir\main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureData_Suite.dir/main.cpp.s"
+CMakeFiles\SecureData_Suite.dir\src\main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureData_Suite.dir/src/main.cpp.s"
 	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SecureData_Suite.dir\main.cpp.s /c D:\Education\Coursework\SecureData_Suite\main.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SecureData_Suite.dir\src\main.cpp.s /c D:\Education\Coursework\SecureData_Suite\src\main.cpp
 <<
 
-CMakeFiles\SecureData_Suite.dir\mainwindow.cpp.obj: CMakeFiles\SecureData_Suite.dir\flags.make
-CMakeFiles\SecureData_Suite.dir\mainwindow.cpp.obj: D:\Education\Coursework\SecureData_Suite\mainwindow.cpp
-CMakeFiles\SecureData_Suite.dir\mainwindow.cpp.obj: CMakeFiles\SecureData_Suite.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SecureData_Suite.dir/mainwindow.cpp.obj"
-	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\SecureData_Suite.dir\mainwindow.cpp.obj.d --working-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430 --filter-prefix="Примечание: включение файла:  " -- C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\SecureData_Suite.dir\mainwindow.cpp.obj /FdCMakeFiles\SecureData_Suite.dir\ /FS -c D:\Education\Coursework\SecureData_Suite\mainwindow.cpp
+CMakeFiles\SecureData_Suite.dir\src\ui\MainWindow.cpp.obj: CMakeFiles\SecureData_Suite.dir\flags.make
+CMakeFiles\SecureData_Suite.dir\src\ui\MainWindow.cpp.obj: D:\Education\Coursework\SecureData_Suite\src\ui\MainWindow.cpp
+CMakeFiles\SecureData_Suite.dir\src\ui\MainWindow.cpp.obj: CMakeFiles\SecureData_Suite.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SecureData_Suite.dir/src/ui/MainWindow.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\SecureData_Suite.dir\src\ui\MainWindow.cpp.obj.d --working-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430 --filter-prefix="Примечание: включение файла:  " -- C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\SecureData_Suite.dir\src\ui\MainWindow.cpp.obj /FdCMakeFiles\SecureData_Suite.dir\ /FS -c D:\Education\Coursework\SecureData_Suite\src\ui\MainWindow.cpp
 <<
 
-CMakeFiles\SecureData_Suite.dir\mainwindow.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureData_Suite.dir/mainwindow.cpp.i"
-	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe > CMakeFiles\SecureData_Suite.dir\mainwindow.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Education\Coursework\SecureData_Suite\mainwindow.cpp
+CMakeFiles\SecureData_Suite.dir\src\ui\MainWindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureData_Suite.dir/src/ui/MainWindow.cpp.i"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe > CMakeFiles\SecureData_Suite.dir\src\ui\MainWindow.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Education\Coursework\SecureData_Suite\src\ui\MainWindow.cpp
 <<
 
-CMakeFiles\SecureData_Suite.dir\mainwindow.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureData_Suite.dir/mainwindow.cpp.s"
+CMakeFiles\SecureData_Suite.dir\src\ui\MainWindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureData_Suite.dir/src/ui/MainWindow.cpp.s"
 	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SecureData_Suite.dir\mainwindow.cpp.s /c D:\Education\Coursework\SecureData_Suite\mainwindow.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SecureData_Suite.dir\src\ui\MainWindow.cpp.s /c D:\Education\Coursework\SecureData_Suite\src\ui\MainWindow.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_base.cpp.obj: CMakeFiles\SecureData_Suite.dir\flags.make
+CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_base.cpp.obj: D:\Education\Coursework\SecureData_Suite\src\crypto\cipher_base.cpp
+CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_base.cpp.obj: CMakeFiles\SecureData_Suite.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SecureData_Suite.dir/src/crypto/cipher_base.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_base.cpp.obj.d --working-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430 --filter-prefix="Примечание: включение файла:  " -- C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\SecureData_Suite.dir\src\crypto\cipher_base.cpp.obj /FdCMakeFiles\SecureData_Suite.dir\ /FS -c D:\Education\Coursework\SecureData_Suite\src\crypto\cipher_base.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_base.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureData_Suite.dir/src/crypto/cipher_base.cpp.i"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe > CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_base.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Education\Coursework\SecureData_Suite\src\crypto\cipher_base.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_base.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureData_Suite.dir/src/crypto/cipher_base.cpp.s"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SecureData_Suite.dir\src\crypto\cipher_base.cpp.s /c D:\Education\Coursework\SecureData_Suite\src\crypto\cipher_base.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_manager.cpp.obj: CMakeFiles\SecureData_Suite.dir\flags.make
+CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_manager.cpp.obj: D:\Education\Coursework\SecureData_Suite\src\crypto\cipher_manager.cpp
+CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_manager.cpp.obj: CMakeFiles\SecureData_Suite.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SecureData_Suite.dir/src/crypto/cipher_manager.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_manager.cpp.obj.d --working-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430 --filter-prefix="Примечание: включение файла:  " -- C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\SecureData_Suite.dir\src\crypto\cipher_manager.cpp.obj /FdCMakeFiles\SecureData_Suite.dir\ /FS -c D:\Education\Coursework\SecureData_Suite\src\crypto\cipher_manager.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureData_Suite.dir/src/crypto/cipher_manager.cpp.i"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe > CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_manager.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Education\Coursework\SecureData_Suite\src\crypto\cipher_manager.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureData_Suite.dir/src/crypto/cipher_manager.cpp.s"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SecureData_Suite.dir\src\crypto\cipher_manager.cpp.s /c D:\Education\Coursework\SecureData_Suite\src\crypto\cipher_manager.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\caesar_cipher.cpp.obj: CMakeFiles\SecureData_Suite.dir\flags.make
+CMakeFiles\SecureData_Suite.dir\src\crypto\caesar_cipher.cpp.obj: D:\Education\Coursework\SecureData_Suite\src\crypto\caesar_cipher.cpp
+CMakeFiles\SecureData_Suite.dir\src\crypto\caesar_cipher.cpp.obj: CMakeFiles\SecureData_Suite.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SecureData_Suite.dir/src/crypto/caesar_cipher.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\SecureData_Suite.dir\src\crypto\caesar_cipher.cpp.obj.d --working-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430 --filter-prefix="Примечание: включение файла:  " -- C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\SecureData_Suite.dir\src\crypto\caesar_cipher.cpp.obj /FdCMakeFiles\SecureData_Suite.dir\ /FS -c D:\Education\Coursework\SecureData_Suite\src\crypto\caesar_cipher.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\caesar_cipher.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureData_Suite.dir/src/crypto/caesar_cipher.cpp.i"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe > CMakeFiles\SecureData_Suite.dir\src\crypto\caesar_cipher.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Education\Coursework\SecureData_Suite\src\crypto\caesar_cipher.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\caesar_cipher.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureData_Suite.dir/src/crypto/caesar_cipher.cpp.s"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SecureData_Suite.dir\src\crypto\caesar_cipher.cpp.s /c D:\Education\Coursework\SecureData_Suite\src\crypto\caesar_cipher.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\vigenere_cipher.cpp.obj: CMakeFiles\SecureData_Suite.dir\flags.make
+CMakeFiles\SecureData_Suite.dir\src\crypto\vigenere_cipher.cpp.obj: D:\Education\Coursework\SecureData_Suite\src\crypto\vigenere_cipher.cpp
+CMakeFiles\SecureData_Suite.dir\src\crypto\vigenere_cipher.cpp.obj: CMakeFiles\SecureData_Suite.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SecureData_Suite.dir/src/crypto/vigenere_cipher.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\SecureData_Suite.dir\src\crypto\vigenere_cipher.cpp.obj.d --working-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430 --filter-prefix="Примечание: включение файла:  " -- C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\SecureData_Suite.dir\src\crypto\vigenere_cipher.cpp.obj /FdCMakeFiles\SecureData_Suite.dir\ /FS -c D:\Education\Coursework\SecureData_Suite\src\crypto\vigenere_cipher.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\vigenere_cipher.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureData_Suite.dir/src/crypto/vigenere_cipher.cpp.i"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe > CMakeFiles\SecureData_Suite.dir\src\crypto\vigenere_cipher.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Education\Coursework\SecureData_Suite\src\crypto\vigenere_cipher.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\vigenere_cipher.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureData_Suite.dir/src/crypto/vigenere_cipher.cpp.s"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SecureData_Suite.dir\src\crypto\vigenere_cipher.cpp.s /c D:\Education\Coursework\SecureData_Suite\src\crypto\vigenere_cipher.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\atbash_cipher.cpp.obj: CMakeFiles\SecureData_Suite.dir\flags.make
+CMakeFiles\SecureData_Suite.dir\src\crypto\atbash_cipher.cpp.obj: D:\Education\Coursework\SecureData_Suite\src\crypto\atbash_cipher.cpp
+CMakeFiles\SecureData_Suite.dir\src\crypto\atbash_cipher.cpp.obj: CMakeFiles\SecureData_Suite.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/SecureData_Suite.dir/src/crypto/atbash_cipher.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\SecureData_Suite.dir\src\crypto\atbash_cipher.cpp.obj.d --working-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430 --filter-prefix="Примечание: включение файла:  " -- C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\SecureData_Suite.dir\src\crypto\atbash_cipher.cpp.obj /FdCMakeFiles\SecureData_Suite.dir\ /FS -c D:\Education\Coursework\SecureData_Suite\src\crypto\atbash_cipher.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\atbash_cipher.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureData_Suite.dir/src/crypto/atbash_cipher.cpp.i"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe > CMakeFiles\SecureData_Suite.dir\src\crypto\atbash_cipher.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Education\Coursework\SecureData_Suite\src\crypto\atbash_cipher.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\atbash_cipher.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureData_Suite.dir/src/crypto/atbash_cipher.cpp.s"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SecureData_Suite.dir\src\crypto\atbash_cipher.cpp.s /c D:\Education\Coursework\SecureData_Suite\src\crypto\atbash_cipher.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\xor_cipher.cpp.obj: CMakeFiles\SecureData_Suite.dir\flags.make
+CMakeFiles\SecureData_Suite.dir\src\crypto\xor_cipher.cpp.obj: D:\Education\Coursework\SecureData_Suite\src\crypto\xor_cipher.cpp
+CMakeFiles\SecureData_Suite.dir\src\crypto\xor_cipher.cpp.obj: CMakeFiles\SecureData_Suite.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/SecureData_Suite.dir/src/crypto/xor_cipher.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\SecureData_Suite.dir\src\crypto\xor_cipher.cpp.obj.d --working-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430 --filter-prefix="Примечание: включение файла:  " -- C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\SecureData_Suite.dir\src\crypto\xor_cipher.cpp.obj /FdCMakeFiles\SecureData_Suite.dir\ /FS -c D:\Education\Coursework\SecureData_Suite\src\crypto\xor_cipher.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\xor_cipher.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureData_Suite.dir/src/crypto/xor_cipher.cpp.i"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe > CMakeFiles\SecureData_Suite.dir\src\crypto\xor_cipher.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Education\Coursework\SecureData_Suite\src\crypto\xor_cipher.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\xor_cipher.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureData_Suite.dir/src/crypto/xor_cipher.cpp.s"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SecureData_Suite.dir\src\crypto\xor_cipher.cpp.s /c D:\Education\Coursework\SecureData_Suite\src\crypto\xor_cipher.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\permutation_cipher.cpp.obj: CMakeFiles\SecureData_Suite.dir\flags.make
+CMakeFiles\SecureData_Suite.dir\src\crypto\permutation_cipher.cpp.obj: D:\Education\Coursework\SecureData_Suite\src\crypto\permutation_cipher.cpp
+CMakeFiles\SecureData_Suite.dir\src\crypto\permutation_cipher.cpp.obj: CMakeFiles\SecureData_Suite.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/SecureData_Suite.dir/src/crypto/permutation_cipher.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\SecureData_Suite.dir\src\crypto\permutation_cipher.cpp.obj.d --working-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430 --filter-prefix="Примечание: включение файла:  " -- C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\SecureData_Suite.dir\src\crypto\permutation_cipher.cpp.obj /FdCMakeFiles\SecureData_Suite.dir\ /FS -c D:\Education\Coursework\SecureData_Suite\src\crypto\permutation_cipher.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\permutation_cipher.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureData_Suite.dir/src/crypto/permutation_cipher.cpp.i"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe > CMakeFiles\SecureData_Suite.dir\src\crypto\permutation_cipher.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Education\Coursework\SecureData_Suite\src\crypto\permutation_cipher.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\permutation_cipher.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureData_Suite.dir/src/crypto/permutation_cipher.cpp.s"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SecureData_Suite.dir\src\crypto\permutation_cipher.cpp.s /c D:\Education\Coursework\SecureData_Suite\src\crypto\permutation_cipher.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\simple_aes_cipher.cpp.obj: CMakeFiles\SecureData_Suite.dir\flags.make
+CMakeFiles\SecureData_Suite.dir\src\crypto\simple_aes_cipher.cpp.obj: D:\Education\Coursework\SecureData_Suite\src\crypto\simple_aes_cipher.cpp
+CMakeFiles\SecureData_Suite.dir\src\crypto\simple_aes_cipher.cpp.obj: CMakeFiles\SecureData_Suite.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/SecureData_Suite.dir/src/crypto/simple_aes_cipher.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\SecureData_Suite.dir\src\crypto\simple_aes_cipher.cpp.obj.d --working-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430 --filter-prefix="Примечание: включение файла:  " -- C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\SecureData_Suite.dir\src\crypto\simple_aes_cipher.cpp.obj /FdCMakeFiles\SecureData_Suite.dir\ /FS -c D:\Education\Coursework\SecureData_Suite\src\crypto\simple_aes_cipher.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\simple_aes_cipher.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureData_Suite.dir/src/crypto/simple_aes_cipher.cpp.i"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe > CMakeFiles\SecureData_Suite.dir\src\crypto\simple_aes_cipher.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Education\Coursework\SecureData_Suite\src\crypto\simple_aes_cipher.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\simple_aes_cipher.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureData_Suite.dir/src/crypto/simple_aes_cipher.cpp.s"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SecureData_Suite.dir\src\crypto\simple_aes_cipher.cpp.s /c D:\Education\Coursework\SecureData_Suite\src\crypto\simple_aes_cipher.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\huffman_codec.cpp.obj: CMakeFiles\SecureData_Suite.dir\flags.make
+CMakeFiles\SecureData_Suite.dir\src\crypto\huffman_codec.cpp.obj: D:\Education\Coursework\SecureData_Suite\src\crypto\huffman_codec.cpp
+CMakeFiles\SecureData_Suite.dir\src\crypto\huffman_codec.cpp.obj: CMakeFiles\SecureData_Suite.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/SecureData_Suite.dir/src/crypto/huffman_codec.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\SecureData_Suite.dir\src\crypto\huffman_codec.cpp.obj.d --working-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430 --filter-prefix="Примечание: включение файла:  " -- C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\SecureData_Suite.dir\src\crypto\huffman_codec.cpp.obj /FdCMakeFiles\SecureData_Suite.dir\ /FS -c D:\Education\Coursework\SecureData_Suite\src\crypto\huffman_codec.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\huffman_codec.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureData_Suite.dir/src/crypto/huffman_codec.cpp.i"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe > CMakeFiles\SecureData_Suite.dir\src\crypto\huffman_codec.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Education\Coursework\SecureData_Suite\src\crypto\huffman_codec.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\huffman_codec.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureData_Suite.dir/src/crypto/huffman_codec.cpp.s"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SecureData_Suite.dir\src\crypto\huffman_codec.cpp.s /c D:\Education\Coursework\SecureData_Suite\src\crypto\huffman_codec.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\rsa_cipher.cpp.obj: CMakeFiles\SecureData_Suite.dir\flags.make
+CMakeFiles\SecureData_Suite.dir\src\crypto\rsa_cipher.cpp.obj: D:\Education\Coursework\SecureData_Suite\src\crypto\rsa_cipher.cpp
+CMakeFiles\SecureData_Suite.dir\src\crypto\rsa_cipher.cpp.obj: CMakeFiles\SecureData_Suite.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/SecureData_Suite.dir/src/crypto/rsa_cipher.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\SecureData_Suite.dir\src\crypto\rsa_cipher.cpp.obj.d --working-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430 --filter-prefix="Примечание: включение файла:  " -- C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\SecureData_Suite.dir\src\crypto\rsa_cipher.cpp.obj /FdCMakeFiles\SecureData_Suite.dir\ /FS -c D:\Education\Coursework\SecureData_Suite\src\crypto\rsa_cipher.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\rsa_cipher.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureData_Suite.dir/src/crypto/rsa_cipher.cpp.i"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe > CMakeFiles\SecureData_Suite.dir\src\crypto\rsa_cipher.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Education\Coursework\SecureData_Suite\src\crypto\rsa_cipher.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\crypto\rsa_cipher.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureData_Suite.dir/src/crypto/rsa_cipher.cpp.s"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SecureData_Suite.dir\src\crypto\rsa_cipher.cpp.s /c D:\Education\Coursework\SecureData_Suite\src\crypto\rsa_cipher.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\stego\lsb_steganography.cpp.obj: CMakeFiles\SecureData_Suite.dir\flags.make
+CMakeFiles\SecureData_Suite.dir\src\stego\lsb_steganography.cpp.obj: D:\Education\Coursework\SecureData_Suite\src\stego\lsb_steganography.cpp
+CMakeFiles\SecureData_Suite.dir\src\stego\lsb_steganography.cpp.obj: CMakeFiles\SecureData_Suite.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/SecureData_Suite.dir/src/stego/lsb_steganography.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\SecureData_Suite.dir\src\stego\lsb_steganography.cpp.obj.d --working-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430 --filter-prefix="Примечание: включение файла:  " -- C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\SecureData_Suite.dir\src\stego\lsb_steganography.cpp.obj /FdCMakeFiles\SecureData_Suite.dir\ /FS -c D:\Education\Coursework\SecureData_Suite\src\stego\lsb_steganography.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\stego\lsb_steganography.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureData_Suite.dir/src/stego/lsb_steganography.cpp.i"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe > CMakeFiles\SecureData_Suite.dir\src\stego\lsb_steganography.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Education\Coursework\SecureData_Suite\src\stego\lsb_steganography.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\stego\lsb_steganography.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureData_Suite.dir/src/stego/lsb_steganography.cpp.s"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SecureData_Suite.dir\src\stego\lsb_steganography.cpp.s /c D:\Education\Coursework\SecureData_Suite\src\stego\lsb_steganography.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\utils\file_cache.cpp.obj: CMakeFiles\SecureData_Suite.dir\flags.make
+CMakeFiles\SecureData_Suite.dir\src\utils\file_cache.cpp.obj: D:\Education\Coursework\SecureData_Suite\src\utils\file_cache.cpp
+CMakeFiles\SecureData_Suite.dir\src\utils\file_cache.cpp.obj: CMakeFiles\SecureData_Suite.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/SecureData_Suite.dir/src/utils/file_cache.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\SecureData_Suite.dir\src\utils\file_cache.cpp.obj.d --working-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430 --filter-prefix="Примечание: включение файла:  " -- C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\SecureData_Suite.dir\src\utils\file_cache.cpp.obj /FdCMakeFiles\SecureData_Suite.dir\ /FS -c D:\Education\Coursework\SecureData_Suite\src\utils\file_cache.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\utils\file_cache.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureData_Suite.dir/src/utils/file_cache.cpp.i"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe > CMakeFiles\SecureData_Suite.dir\src\utils\file_cache.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Education\Coursework\SecureData_Suite\src\utils\file_cache.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\utils\file_cache.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureData_Suite.dir/src/utils/file_cache.cpp.s"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SecureData_Suite.dir\src\utils\file_cache.cpp.s /c D:\Education\Coursework\SecureData_Suite\src\utils\file_cache.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\utils\translation_manager.cpp.obj: CMakeFiles\SecureData_Suite.dir\flags.make
+CMakeFiles\SecureData_Suite.dir\src\utils\translation_manager.cpp.obj: D:\Education\Coursework\SecureData_Suite\src\utils\translation_manager.cpp
+CMakeFiles\SecureData_Suite.dir\src\utils\translation_manager.cpp.obj: CMakeFiles\SecureData_Suite.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/SecureData_Suite.dir/src/utils/translation_manager.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\SecureData_Suite.dir\src\utils\translation_manager.cpp.obj.d --working-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430 --filter-prefix="Примечание: включение файла:  " -- C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\SecureData_Suite.dir\src\utils\translation_manager.cpp.obj /FdCMakeFiles\SecureData_Suite.dir\ /FS -c D:\Education\Coursework\SecureData_Suite\src\utils\translation_manager.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\utils\translation_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureData_Suite.dir/src/utils/translation_manager.cpp.i"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe > CMakeFiles\SecureData_Suite.dir\src\utils\translation_manager.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Education\Coursework\SecureData_Suite\src\utils\translation_manager.cpp
+<<
+
+CMakeFiles\SecureData_Suite.dir\src\utils\translation_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureData_Suite.dir/src/utils/translation_manager.cpp.s"
+	C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SecureData_Suite.dir\src\utils\translation_manager.cpp.s /c D:\Education\Coursework\SecureData_Suite\src\utils\translation_manager.cpp
 <<
 
 CMakeFiles\SecureData_Suite.dir\e72d0446233bbfac171f5d8904f8f754\.qt\rcc\qrc_SecureData_Suite_translations.cpp.obj: CMakeFiles\SecureData_Suite.dir\flags.make
 CMakeFiles\SecureData_Suite.dir\e72d0446233bbfac171f5d8904f8f754\.qt\rcc\qrc_SecureData_Suite_translations.cpp.obj: .qt\rcc\qrc_SecureData_Suite_translations.cpp
 CMakeFiles\SecureData_Suite.dir\e72d0446233bbfac171f5d8904f8f754\.qt\rcc\qrc_SecureData_Suite_translations.cpp.obj: CMakeFiles\SecureData_Suite.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SecureData_Suite.dir/e72d0446233bbfac171f5d8904f8f754/.qt/rcc/qrc_SecureData_Suite_translations.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/SecureData_Suite.dir/e72d0446233bbfac171f5d8904f8f754/.qt/rcc/qrc_SecureData_Suite_translations.cpp.obj"
 	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\SecureData_Suite.dir\e72d0446233bbfac171f5d8904f8f754\.qt\rcc\qrc_SecureData_Suite_translations.cpp.obj.d --working-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430 --filter-prefix="Примечание: включение файла:  " -- C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\HostX64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\SecureData_Suite.dir\e72d0446233bbfac171f5d8904f8f754\.qt\rcc\qrc_SecureData_Suite_translations.cpp.obj /FdCMakeFiles\SecureData_Suite.dir\ /FS -c D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\.qt\rcc\qrc_SecureData_Suite_translations.cpp
 <<
@@ -153,16 +413,42 @@ CMakeFiles\SecureData_Suite.dir\e72d0446233bbfac171f5d8904f8f754\.qt\rcc\qrc_Sec
 # Object files for target SecureData_Suite
 SecureData_Suite_OBJECTS = \
 "CMakeFiles\SecureData_Suite.dir\SecureData_Suite_autogen\mocs_compilation.cpp.obj" \
-"CMakeFiles\SecureData_Suite.dir\main.cpp.obj" \
-"CMakeFiles\SecureData_Suite.dir\mainwindow.cpp.obj" \
+"CMakeFiles\SecureData_Suite.dir\src\main.cpp.obj" \
+"CMakeFiles\SecureData_Suite.dir\src\ui\MainWindow.cpp.obj" \
+"CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_base.cpp.obj" \
+"CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_manager.cpp.obj" \
+"CMakeFiles\SecureData_Suite.dir\src\crypto\caesar_cipher.cpp.obj" \
+"CMakeFiles\SecureData_Suite.dir\src\crypto\vigenere_cipher.cpp.obj" \
+"CMakeFiles\SecureData_Suite.dir\src\crypto\atbash_cipher.cpp.obj" \
+"CMakeFiles\SecureData_Suite.dir\src\crypto\xor_cipher.cpp.obj" \
+"CMakeFiles\SecureData_Suite.dir\src\crypto\permutation_cipher.cpp.obj" \
+"CMakeFiles\SecureData_Suite.dir\src\crypto\simple_aes_cipher.cpp.obj" \
+"CMakeFiles\SecureData_Suite.dir\src\crypto\huffman_codec.cpp.obj" \
+"CMakeFiles\SecureData_Suite.dir\src\crypto\rsa_cipher.cpp.obj" \
+"CMakeFiles\SecureData_Suite.dir\src\stego\lsb_steganography.cpp.obj" \
+"CMakeFiles\SecureData_Suite.dir\src\utils\file_cache.cpp.obj" \
+"CMakeFiles\SecureData_Suite.dir\src\utils\translation_manager.cpp.obj" \
 "CMakeFiles\SecureData_Suite.dir\e72d0446233bbfac171f5d8904f8f754\.qt\rcc\qrc_SecureData_Suite_translations.cpp.obj"
 
 # External object files for target SecureData_Suite
 SecureData_Suite_EXTERNAL_OBJECTS =
 
 SecureData_Suite.exe: CMakeFiles\SecureData_Suite.dir\SecureData_Suite_autogen\mocs_compilation.cpp.obj
-SecureData_Suite.exe: CMakeFiles\SecureData_Suite.dir\main.cpp.obj
-SecureData_Suite.exe: CMakeFiles\SecureData_Suite.dir\mainwindow.cpp.obj
+SecureData_Suite.exe: CMakeFiles\SecureData_Suite.dir\src\main.cpp.obj
+SecureData_Suite.exe: CMakeFiles\SecureData_Suite.dir\src\ui\MainWindow.cpp.obj
+SecureData_Suite.exe: CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_base.cpp.obj
+SecureData_Suite.exe: CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_manager.cpp.obj
+SecureData_Suite.exe: CMakeFiles\SecureData_Suite.dir\src\crypto\caesar_cipher.cpp.obj
+SecureData_Suite.exe: CMakeFiles\SecureData_Suite.dir\src\crypto\vigenere_cipher.cpp.obj
+SecureData_Suite.exe: CMakeFiles\SecureData_Suite.dir\src\crypto\atbash_cipher.cpp.obj
+SecureData_Suite.exe: CMakeFiles\SecureData_Suite.dir\src\crypto\xor_cipher.cpp.obj
+SecureData_Suite.exe: CMakeFiles\SecureData_Suite.dir\src\crypto\permutation_cipher.cpp.obj
+SecureData_Suite.exe: CMakeFiles\SecureData_Suite.dir\src\crypto\simple_aes_cipher.cpp.obj
+SecureData_Suite.exe: CMakeFiles\SecureData_Suite.dir\src\crypto\huffman_codec.cpp.obj
+SecureData_Suite.exe: CMakeFiles\SecureData_Suite.dir\src\crypto\rsa_cipher.cpp.obj
+SecureData_Suite.exe: CMakeFiles\SecureData_Suite.dir\src\stego\lsb_steganography.cpp.obj
+SecureData_Suite.exe: CMakeFiles\SecureData_Suite.dir\src\utils\file_cache.cpp.obj
+SecureData_Suite.exe: CMakeFiles\SecureData_Suite.dir\src\utils\translation_manager.cpp.obj
 SecureData_Suite.exe: CMakeFiles\SecureData_Suite.dir\e72d0446233bbfac171f5d8904f8f754\.qt\rcc\qrc_SecureData_Suite_translations.cpp.obj
 SecureData_Suite.exe: CMakeFiles\SecureData_Suite.dir\build.make
 SecureData_Suite.exe: D:\Qt\6.10.2\msvc2022_64\lib\Qt6Widgetsd.lib
@@ -170,7 +456,7 @@ SecureData_Suite.exe: D:\Qt\6.10.2\msvc2022_64\lib\Qt6Guid.lib
 SecureData_Suite.exe: D:\Qt\6.10.2\msvc2022_64\lib\Qt6Cored.lib
 SecureData_Suite.exe: D:\Qt\6.10.2\msvc2022_64\lib\Qt6EntryPointd.lib
 SecureData_Suite.exe: CMakeFiles\SecureData_Suite.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable SecureData_Suite.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable SecureData_Suite.exe"
 	D:\Qt\Tools\CMake_64\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\SecureData_Suite.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x64\mt.exe --manifests -- C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\SecureData_Suite.dir\objects1.rsp @<<
  /out:SecureData_Suite.exe /implib:SecureData_Suite.lib /pdb:D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\SecureData_Suite.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:windows  D:\Qt\6.10.2\msvc2022_64\lib\Qt6Widgetsd.lib D:\Qt\6.10.2\msvc2022_64\lib\Qt6Guid.lib D:\Qt\6.10.2\msvc2022_64\lib\Qt6Cored.lib mpr.lib userenv.lib D:\Qt\6.10.2\msvc2022_64\lib\Qt6EntryPointd.lib shell32.lib d3d11.lib dxgi.lib dxguid.lib d3d12.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

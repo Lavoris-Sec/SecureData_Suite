@@ -314,6 +314,49 @@
 		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake",
 		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake",
 		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Gui/Qt6GuiConfigVersionImpl.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindVulkan.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindVulkan.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindVulkan.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindVulkan.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersion.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersionImpl.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfig.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsDependencies.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsAdditionalTargetInfo.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Gui/Qt6GuiPlugins.cmake",
+		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Gui/Qt6GuiVersionlessAliasTargets.cmake",
 		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsConfigVersion.cmake",
 		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsConfigVersionImpl.cmake",
 		"D:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsConfig.cmake",
@@ -430,9 +473,15 @@
 	"HEADERS" : 
 	[
 		[
-			"D:/Education/Coursework/SecureData_Suite/mainwindow.h",
+			"D:/Education/Coursework/SecureData_Suite/include/ui/MainWindow.h",
 			"MU",
-			"EWIEGA46WW/moc_mainwindow.cpp",
+			"JCP2AIONHY/moc_MainWindow.cpp",
+			null
+		],
+		[
+			"D:/Education/Coursework/SecureData_Suite/include/utils/translation_manager.h",
+			"MU",
+			"KLZYWGTNTX/moc_translation_manager.cpp",
 			null
 		]
 	],
@@ -461,6 +510,7 @@
 	],
 	"MOC_INCLUDES" : 
 	[
+		"D:/Education/Coursework/SecureData_Suite/include",
 		"D:/Qt/6.10.2/msvc2022_64/include/QtCore",
 		"D:/Qt/6.10.2/msvc2022_64/include",
 		"D:/Qt/6.10.2/msvc2022_64/mkspecs/win32-msvc",
@@ -495,8 +545,77 @@
 	"SETTINGS_FILE" : "D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/SecureData_Suite_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "D:/Education/Coursework/SecureData_Suite/main.cpp", "MU", null ],
-		[ "D:/Education/Coursework/SecureData_Suite/mainwindow.cpp", "MU", null ]
+		[
+			"D:/Education/Coursework/SecureData_Suite/src/crypto/atbash_cipher.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Education/Coursework/SecureData_Suite/src/crypto/caesar_cipher.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Education/Coursework/SecureData_Suite/src/crypto/cipher_base.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Education/Coursework/SecureData_Suite/src/crypto/cipher_manager.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Education/Coursework/SecureData_Suite/src/crypto/huffman_codec.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Education/Coursework/SecureData_Suite/src/crypto/permutation_cipher.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Education/Coursework/SecureData_Suite/src/crypto/rsa_cipher.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Education/Coursework/SecureData_Suite/src/crypto/simple_aes_cipher.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Education/Coursework/SecureData_Suite/src/crypto/vigenere_cipher.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Education/Coursework/SecureData_Suite/src/crypto/xor_cipher.cpp",
+			"MU",
+			null
+		],
+		[ "D:/Education/Coursework/SecureData_Suite/src/main.cpp", "MU", null ],
+		[
+			"D:/Education/Coursework/SecureData_Suite/src/stego/lsb_steganography.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Education/Coursework/SecureData_Suite/src/ui/MainWindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Education/Coursework/SecureData_Suite/src/utils/file_cache.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Education/Coursework/SecureData_Suite/src/utils/translation_manager.cpp",
+			"MU",
+			null
+		]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

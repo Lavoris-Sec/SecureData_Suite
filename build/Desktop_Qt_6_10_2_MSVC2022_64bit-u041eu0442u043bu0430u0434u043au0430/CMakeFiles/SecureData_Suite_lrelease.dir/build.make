@@ -58,10 +58,10 @@ include CMakeFiles\SecureData_Suite_lrelease.dir\progress.make
 CMakeFiles\SecureData_Suite_lrelease: SecureData_Suite_ru_BY.qm
 
 SecureData_Suite_ru_BY.qm: D:\Qt\6.10.2\msvc2022_64\bin\lrelease.exe
-SecureData_Suite_ru_BY.qm: D:\Education\Coursework\SecureData_Suite\SecureData_Suite_ru_BY.ts
+SecureData_Suite_ru_BY.qm: D:\Education\Coursework\SecureData_Suite\resources\translations\SecureData_Suite_ru_BY.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\Education\Coursework\SecureData_Suite\build\Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating SecureData_Suite_ru_BY.qm"
 	D:\Qt\Tools\CMake_64\bin\cmake.exe -E make_directory D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430
-	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.10.2/msvc2022_64/bin/lrelease.exe D:/Education/Coursework/SecureData_Suite/SecureData_Suite_ru_BY.ts -qm D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/SecureData_Suite_ru_BY.qm
+	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.10.2/msvc2022_64/bin/lrelease.exe D:/Education/Coursework/SecureData_Suite/resources/translations/SecureData_Suite_ru_BY.ts -qm D:/Education/Coursework/SecureData_Suite/build/Desktop_Qt_6_10_2_MSVC2022_64bit-u041eu0442u043bu0430u0434u043au0430/SecureData_Suite_ru_BY.qm
 
 SecureData_Suite_lrelease: CMakeFiles\SecureData_Suite_lrelease
 SecureData_Suite_lrelease: SecureData_Suite_ru_BY.qm

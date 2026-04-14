@@ -277,53 +277,365 @@ e72d0446233bbfac171f5d8904f8f754\.qt\rcc\qrc_SecureData_Suite_translations.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\e72d0446233bbfac171f5d8904f8f754\.qt\rcc\qrc_SecureData_Suite_translations.cpp.s
 .PHONY : e72d0446233bbfac171f5d8904f8f754\.qt\rcc\qrc_SecureData_Suite_translations.cpp.s
 
-main.obj: main.cpp.obj
-.PHONY : main.obj
+src\crypto\atbash_cipher.obj: src\crypto\atbash_cipher.cpp.obj
+.PHONY : src\crypto\atbash_cipher.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\main.cpp.obj
-.PHONY : main.cpp.obj
+src\crypto\atbash_cipher.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\atbash_cipher.cpp.obj
+.PHONY : src\crypto\atbash_cipher.cpp.obj
 
-main.i: main.cpp.i
-.PHONY : main.i
+src\crypto\atbash_cipher.i: src\crypto\atbash_cipher.cpp.i
+.PHONY : src\crypto\atbash_cipher.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\main.cpp.i
-.PHONY : main.cpp.i
+src\crypto\atbash_cipher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\atbash_cipher.cpp.i
+.PHONY : src\crypto\atbash_cipher.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+src\crypto\atbash_cipher.s: src\crypto\atbash_cipher.cpp.s
+.PHONY : src\crypto\atbash_cipher.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\main.cpp.s
-.PHONY : main.cpp.s
+src\crypto\atbash_cipher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\atbash_cipher.cpp.s
+.PHONY : src\crypto\atbash_cipher.cpp.s
 
-mainwindow.obj: mainwindow.cpp.obj
-.PHONY : mainwindow.obj
+src\crypto\caesar_cipher.obj: src\crypto\caesar_cipher.cpp.obj
+.PHONY : src\crypto\caesar_cipher.obj
 
 # target to build an object file
-mainwindow.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\mainwindow.cpp.obj
-.PHONY : mainwindow.cpp.obj
+src\crypto\caesar_cipher.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\caesar_cipher.cpp.obj
+.PHONY : src\crypto\caesar_cipher.cpp.obj
 
-mainwindow.i: mainwindow.cpp.i
-.PHONY : mainwindow.i
+src\crypto\caesar_cipher.i: src\crypto\caesar_cipher.cpp.i
+.PHONY : src\crypto\caesar_cipher.i
 
 # target to preprocess a source file
-mainwindow.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\mainwindow.cpp.i
-.PHONY : mainwindow.cpp.i
+src\crypto\caesar_cipher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\caesar_cipher.cpp.i
+.PHONY : src\crypto\caesar_cipher.cpp.i
 
-mainwindow.s: mainwindow.cpp.s
-.PHONY : mainwindow.s
+src\crypto\caesar_cipher.s: src\crypto\caesar_cipher.cpp.s
+.PHONY : src\crypto\caesar_cipher.s
 
 # target to generate assembly for a file
-mainwindow.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\mainwindow.cpp.s
-.PHONY : mainwindow.cpp.s
+src\crypto\caesar_cipher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\caesar_cipher.cpp.s
+.PHONY : src\crypto\caesar_cipher.cpp.s
+
+src\crypto\cipher_base.obj: src\crypto\cipher_base.cpp.obj
+.PHONY : src\crypto\cipher_base.obj
+
+# target to build an object file
+src\crypto\cipher_base.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_base.cpp.obj
+.PHONY : src\crypto\cipher_base.cpp.obj
+
+src\crypto\cipher_base.i: src\crypto\cipher_base.cpp.i
+.PHONY : src\crypto\cipher_base.i
+
+# target to preprocess a source file
+src\crypto\cipher_base.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_base.cpp.i
+.PHONY : src\crypto\cipher_base.cpp.i
+
+src\crypto\cipher_base.s: src\crypto\cipher_base.cpp.s
+.PHONY : src\crypto\cipher_base.s
+
+# target to generate assembly for a file
+src\crypto\cipher_base.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_base.cpp.s
+.PHONY : src\crypto\cipher_base.cpp.s
+
+src\crypto\cipher_manager.obj: src\crypto\cipher_manager.cpp.obj
+.PHONY : src\crypto\cipher_manager.obj
+
+# target to build an object file
+src\crypto\cipher_manager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_manager.cpp.obj
+.PHONY : src\crypto\cipher_manager.cpp.obj
+
+src\crypto\cipher_manager.i: src\crypto\cipher_manager.cpp.i
+.PHONY : src\crypto\cipher_manager.i
+
+# target to preprocess a source file
+src\crypto\cipher_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_manager.cpp.i
+.PHONY : src\crypto\cipher_manager.cpp.i
+
+src\crypto\cipher_manager.s: src\crypto\cipher_manager.cpp.s
+.PHONY : src\crypto\cipher_manager.s
+
+# target to generate assembly for a file
+src\crypto\cipher_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\cipher_manager.cpp.s
+.PHONY : src\crypto\cipher_manager.cpp.s
+
+src\crypto\huffman_codec.obj: src\crypto\huffman_codec.cpp.obj
+.PHONY : src\crypto\huffman_codec.obj
+
+# target to build an object file
+src\crypto\huffman_codec.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\huffman_codec.cpp.obj
+.PHONY : src\crypto\huffman_codec.cpp.obj
+
+src\crypto\huffman_codec.i: src\crypto\huffman_codec.cpp.i
+.PHONY : src\crypto\huffman_codec.i
+
+# target to preprocess a source file
+src\crypto\huffman_codec.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\huffman_codec.cpp.i
+.PHONY : src\crypto\huffman_codec.cpp.i
+
+src\crypto\huffman_codec.s: src\crypto\huffman_codec.cpp.s
+.PHONY : src\crypto\huffman_codec.s
+
+# target to generate assembly for a file
+src\crypto\huffman_codec.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\huffman_codec.cpp.s
+.PHONY : src\crypto\huffman_codec.cpp.s
+
+src\crypto\permutation_cipher.obj: src\crypto\permutation_cipher.cpp.obj
+.PHONY : src\crypto\permutation_cipher.obj
+
+# target to build an object file
+src\crypto\permutation_cipher.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\permutation_cipher.cpp.obj
+.PHONY : src\crypto\permutation_cipher.cpp.obj
+
+src\crypto\permutation_cipher.i: src\crypto\permutation_cipher.cpp.i
+.PHONY : src\crypto\permutation_cipher.i
+
+# target to preprocess a source file
+src\crypto\permutation_cipher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\permutation_cipher.cpp.i
+.PHONY : src\crypto\permutation_cipher.cpp.i
+
+src\crypto\permutation_cipher.s: src\crypto\permutation_cipher.cpp.s
+.PHONY : src\crypto\permutation_cipher.s
+
+# target to generate assembly for a file
+src\crypto\permutation_cipher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\permutation_cipher.cpp.s
+.PHONY : src\crypto\permutation_cipher.cpp.s
+
+src\crypto\rsa_cipher.obj: src\crypto\rsa_cipher.cpp.obj
+.PHONY : src\crypto\rsa_cipher.obj
+
+# target to build an object file
+src\crypto\rsa_cipher.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\rsa_cipher.cpp.obj
+.PHONY : src\crypto\rsa_cipher.cpp.obj
+
+src\crypto\rsa_cipher.i: src\crypto\rsa_cipher.cpp.i
+.PHONY : src\crypto\rsa_cipher.i
+
+# target to preprocess a source file
+src\crypto\rsa_cipher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\rsa_cipher.cpp.i
+.PHONY : src\crypto\rsa_cipher.cpp.i
+
+src\crypto\rsa_cipher.s: src\crypto\rsa_cipher.cpp.s
+.PHONY : src\crypto\rsa_cipher.s
+
+# target to generate assembly for a file
+src\crypto\rsa_cipher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\rsa_cipher.cpp.s
+.PHONY : src\crypto\rsa_cipher.cpp.s
+
+src\crypto\simple_aes_cipher.obj: src\crypto\simple_aes_cipher.cpp.obj
+.PHONY : src\crypto\simple_aes_cipher.obj
+
+# target to build an object file
+src\crypto\simple_aes_cipher.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\simple_aes_cipher.cpp.obj
+.PHONY : src\crypto\simple_aes_cipher.cpp.obj
+
+src\crypto\simple_aes_cipher.i: src\crypto\simple_aes_cipher.cpp.i
+.PHONY : src\crypto\simple_aes_cipher.i
+
+# target to preprocess a source file
+src\crypto\simple_aes_cipher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\simple_aes_cipher.cpp.i
+.PHONY : src\crypto\simple_aes_cipher.cpp.i
+
+src\crypto\simple_aes_cipher.s: src\crypto\simple_aes_cipher.cpp.s
+.PHONY : src\crypto\simple_aes_cipher.s
+
+# target to generate assembly for a file
+src\crypto\simple_aes_cipher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\simple_aes_cipher.cpp.s
+.PHONY : src\crypto\simple_aes_cipher.cpp.s
+
+src\crypto\vigenere_cipher.obj: src\crypto\vigenere_cipher.cpp.obj
+.PHONY : src\crypto\vigenere_cipher.obj
+
+# target to build an object file
+src\crypto\vigenere_cipher.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\vigenere_cipher.cpp.obj
+.PHONY : src\crypto\vigenere_cipher.cpp.obj
+
+src\crypto\vigenere_cipher.i: src\crypto\vigenere_cipher.cpp.i
+.PHONY : src\crypto\vigenere_cipher.i
+
+# target to preprocess a source file
+src\crypto\vigenere_cipher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\vigenere_cipher.cpp.i
+.PHONY : src\crypto\vigenere_cipher.cpp.i
+
+src\crypto\vigenere_cipher.s: src\crypto\vigenere_cipher.cpp.s
+.PHONY : src\crypto\vigenere_cipher.s
+
+# target to generate assembly for a file
+src\crypto\vigenere_cipher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\vigenere_cipher.cpp.s
+.PHONY : src\crypto\vigenere_cipher.cpp.s
+
+src\crypto\xor_cipher.obj: src\crypto\xor_cipher.cpp.obj
+.PHONY : src\crypto\xor_cipher.obj
+
+# target to build an object file
+src\crypto\xor_cipher.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\xor_cipher.cpp.obj
+.PHONY : src\crypto\xor_cipher.cpp.obj
+
+src\crypto\xor_cipher.i: src\crypto\xor_cipher.cpp.i
+.PHONY : src\crypto\xor_cipher.i
+
+# target to preprocess a source file
+src\crypto\xor_cipher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\xor_cipher.cpp.i
+.PHONY : src\crypto\xor_cipher.cpp.i
+
+src\crypto\xor_cipher.s: src\crypto\xor_cipher.cpp.s
+.PHONY : src\crypto\xor_cipher.s
+
+# target to generate assembly for a file
+src\crypto\xor_cipher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\crypto\xor_cipher.cpp.s
+.PHONY : src\crypto\xor_cipher.cpp.s
+
+src\main.obj: src\main.cpp.obj
+.PHONY : src\main.obj
+
+# target to build an object file
+src\main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\main.cpp.obj
+.PHONY : src\main.cpp.obj
+
+src\main.i: src\main.cpp.i
+.PHONY : src\main.i
+
+# target to preprocess a source file
+src\main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\main.cpp.i
+.PHONY : src\main.cpp.i
+
+src\main.s: src\main.cpp.s
+.PHONY : src\main.s
+
+# target to generate assembly for a file
+src\main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\main.cpp.s
+.PHONY : src\main.cpp.s
+
+src\stego\lsb_steganography.obj: src\stego\lsb_steganography.cpp.obj
+.PHONY : src\stego\lsb_steganography.obj
+
+# target to build an object file
+src\stego\lsb_steganography.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\stego\lsb_steganography.cpp.obj
+.PHONY : src\stego\lsb_steganography.cpp.obj
+
+src\stego\lsb_steganography.i: src\stego\lsb_steganography.cpp.i
+.PHONY : src\stego\lsb_steganography.i
+
+# target to preprocess a source file
+src\stego\lsb_steganography.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\stego\lsb_steganography.cpp.i
+.PHONY : src\stego\lsb_steganography.cpp.i
+
+src\stego\lsb_steganography.s: src\stego\lsb_steganography.cpp.s
+.PHONY : src\stego\lsb_steganography.s
+
+# target to generate assembly for a file
+src\stego\lsb_steganography.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\stego\lsb_steganography.cpp.s
+.PHONY : src\stego\lsb_steganography.cpp.s
+
+src\ui\MainWindow.obj: src\ui\MainWindow.cpp.obj
+.PHONY : src\ui\MainWindow.obj
+
+# target to build an object file
+src\ui\MainWindow.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\ui\MainWindow.cpp.obj
+.PHONY : src\ui\MainWindow.cpp.obj
+
+src\ui\MainWindow.i: src\ui\MainWindow.cpp.i
+.PHONY : src\ui\MainWindow.i
+
+# target to preprocess a source file
+src\ui\MainWindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\ui\MainWindow.cpp.i
+.PHONY : src\ui\MainWindow.cpp.i
+
+src\ui\MainWindow.s: src\ui\MainWindow.cpp.s
+.PHONY : src\ui\MainWindow.s
+
+# target to generate assembly for a file
+src\ui\MainWindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\ui\MainWindow.cpp.s
+.PHONY : src\ui\MainWindow.cpp.s
+
+src\utils\file_cache.obj: src\utils\file_cache.cpp.obj
+.PHONY : src\utils\file_cache.obj
+
+# target to build an object file
+src\utils\file_cache.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\utils\file_cache.cpp.obj
+.PHONY : src\utils\file_cache.cpp.obj
+
+src\utils\file_cache.i: src\utils\file_cache.cpp.i
+.PHONY : src\utils\file_cache.i
+
+# target to preprocess a source file
+src\utils\file_cache.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\utils\file_cache.cpp.i
+.PHONY : src\utils\file_cache.cpp.i
+
+src\utils\file_cache.s: src\utils\file_cache.cpp.s
+.PHONY : src\utils\file_cache.s
+
+# target to generate assembly for a file
+src\utils\file_cache.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\utils\file_cache.cpp.s
+.PHONY : src\utils\file_cache.cpp.s
+
+src\utils\translation_manager.obj: src\utils\translation_manager.cpp.obj
+.PHONY : src\utils\translation_manager.obj
+
+# target to build an object file
+src\utils\translation_manager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\utils\translation_manager.cpp.obj
+.PHONY : src\utils\translation_manager.cpp.obj
+
+src\utils\translation_manager.i: src\utils\translation_manager.cpp.i
+.PHONY : src\utils\translation_manager.i
+
+# target to preprocess a source file
+src\utils\translation_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\utils\translation_manager.cpp.i
+.PHONY : src\utils\translation_manager.cpp.i
+
+src\utils\translation_manager.s: src\utils\translation_manager.cpp.s
+.PHONY : src\utils\translation_manager.s
+
+# target to generate assembly for a file
+src\utils\translation_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SecureData_Suite.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SecureData_Suite.dir\src\utils\translation_manager.cpp.s
+.PHONY : src\utils\translation_manager.cpp.s
 
 # Help Target
 help:
@@ -349,12 +661,51 @@ help:
 	@echo ... e72d0446233bbfac171f5d8904f8f754/.qt/rcc/qrc_SecureData_Suite_translations.obj
 	@echo ... e72d0446233bbfac171f5d8904f8f754/.qt/rcc/qrc_SecureData_Suite_translations.i
 	@echo ... e72d0446233bbfac171f5d8904f8f754/.qt/rcc/qrc_SecureData_Suite_translations.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
-	@echo ... mainwindow.obj
-	@echo ... mainwindow.i
-	@echo ... mainwindow.s
+	@echo ... src/crypto/atbash_cipher.obj
+	@echo ... src/crypto/atbash_cipher.i
+	@echo ... src/crypto/atbash_cipher.s
+	@echo ... src/crypto/caesar_cipher.obj
+	@echo ... src/crypto/caesar_cipher.i
+	@echo ... src/crypto/caesar_cipher.s
+	@echo ... src/crypto/cipher_base.obj
+	@echo ... src/crypto/cipher_base.i
+	@echo ... src/crypto/cipher_base.s
+	@echo ... src/crypto/cipher_manager.obj
+	@echo ... src/crypto/cipher_manager.i
+	@echo ... src/crypto/cipher_manager.s
+	@echo ... src/crypto/huffman_codec.obj
+	@echo ... src/crypto/huffman_codec.i
+	@echo ... src/crypto/huffman_codec.s
+	@echo ... src/crypto/permutation_cipher.obj
+	@echo ... src/crypto/permutation_cipher.i
+	@echo ... src/crypto/permutation_cipher.s
+	@echo ... src/crypto/rsa_cipher.obj
+	@echo ... src/crypto/rsa_cipher.i
+	@echo ... src/crypto/rsa_cipher.s
+	@echo ... src/crypto/simple_aes_cipher.obj
+	@echo ... src/crypto/simple_aes_cipher.i
+	@echo ... src/crypto/simple_aes_cipher.s
+	@echo ... src/crypto/vigenere_cipher.obj
+	@echo ... src/crypto/vigenere_cipher.i
+	@echo ... src/crypto/vigenere_cipher.s
+	@echo ... src/crypto/xor_cipher.obj
+	@echo ... src/crypto/xor_cipher.i
+	@echo ... src/crypto/xor_cipher.s
+	@echo ... src/main.obj
+	@echo ... src/main.i
+	@echo ... src/main.s
+	@echo ... src/stego/lsb_steganography.obj
+	@echo ... src/stego/lsb_steganography.i
+	@echo ... src/stego/lsb_steganography.s
+	@echo ... src/ui/MainWindow.obj
+	@echo ... src/ui/MainWindow.i
+	@echo ... src/ui/MainWindow.s
+	@echo ... src/utils/file_cache.obj
+	@echo ... src/utils/file_cache.i
+	@echo ... src/utils/file_cache.s
+	@echo ... src/utils/translation_manager.obj
+	@echo ... src/utils/translation_manager.i
+	@echo ... src/utils/translation_manager.s
 .PHONY : help
 
 
