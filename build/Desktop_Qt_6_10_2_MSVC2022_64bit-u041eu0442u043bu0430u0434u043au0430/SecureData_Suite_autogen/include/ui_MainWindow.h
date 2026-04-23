@@ -21,6 +21,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPlainTextEdit>
+#include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSpinBox>
@@ -85,6 +86,17 @@ public:
     QPushButton *btnOpenCache;
     QPushButton *btnFileEncrypt;
     QPushButton *btnFileDecrypt;
+    QWidget *tabSettings;
+    QVBoxLayout *layoutSettings;
+    QLabel *labelSettingsHint;
+    QComboBox *comboAchievements;
+    QProgressBar *progressAchievement;
+    QLabel *labelAchievementStatus;
+    QSpacerItem *verticalSpacerAchievementsTopButtons;
+    QHBoxLayout *layoutAchievementButtons;
+    QPushButton *btnRefreshAchievements;
+    QPushButton *btnResetAchievements;
+    QSpacerItem *verticalSpacerSettings;
     QWidget *tabAbout;
     QVBoxLayout *layoutAbout;
     QTextBrowser *textAbout;
@@ -330,6 +342,58 @@ public:
         gridFiles->addWidget(btnFileDecrypt, 3, 1, 1, 1);
 
         tabWidget->addTab(tabFiles, QString());
+        tabSettings = new QWidget();
+        tabSettings->setObjectName("tabSettings");
+        layoutSettings = new QVBoxLayout(tabSettings);
+        layoutSettings->setObjectName("layoutSettings");
+        labelSettingsHint = new QLabel(tabSettings);
+        labelSettingsHint->setObjectName("labelSettingsHint");
+
+        layoutSettings->addWidget(labelSettingsHint);
+
+        comboAchievements = new QComboBox(tabSettings);
+        comboAchievements->setObjectName("comboAchievements");
+
+        layoutSettings->addWidget(comboAchievements);
+
+        progressAchievement = new QProgressBar(tabSettings);
+        progressAchievement->setObjectName("progressAchievement");
+        progressAchievement->setMinimum(0);
+        progressAchievement->setMaximum(100);
+        progressAchievement->setValue(0);
+
+        layoutSettings->addWidget(progressAchievement);
+
+        labelAchievementStatus = new QLabel(tabSettings);
+        labelAchievementStatus->setObjectName("labelAchievementStatus");
+        labelAchievementStatus->setWordWrap(true);
+
+        layoutSettings->addWidget(labelAchievementStatus);
+
+        verticalSpacerAchievementsTopButtons = new QSpacerItem(20, 80, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        layoutSettings->addItem(verticalSpacerAchievementsTopButtons);
+
+        layoutAchievementButtons = new QHBoxLayout();
+        layoutAchievementButtons->setObjectName("layoutAchievementButtons");
+        btnRefreshAchievements = new QPushButton(tabSettings);
+        btnRefreshAchievements->setObjectName("btnRefreshAchievements");
+
+        layoutAchievementButtons->addWidget(btnRefreshAchievements);
+
+        btnResetAchievements = new QPushButton(tabSettings);
+        btnResetAchievements->setObjectName("btnResetAchievements");
+
+        layoutAchievementButtons->addWidget(btnResetAchievements);
+
+
+        layoutSettings->addLayout(layoutAchievementButtons);
+
+        verticalSpacerSettings = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        layoutSettings->addItem(verticalSpacerSettings);
+
+        tabWidget->addTab(tabSettings, QString());
         tabAbout = new QWidget();
         tabAbout->setObjectName("tabAbout");
         layoutAbout = new QVBoxLayout(tabAbout);
@@ -417,6 +481,11 @@ public:
         btnFileEncrypt->setText(QCoreApplication::translate("MainWindow", "Encrypt file", nullptr));
         btnFileDecrypt->setText(QCoreApplication::translate("MainWindow", "Decrypt file", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tabFiles), QCoreApplication::translate("MainWindow", "Files", nullptr));
+        labelSettingsHint->setText(QCoreApplication::translate("MainWindow", "Achievements", nullptr));
+        labelAchievementStatus->setText(QCoreApplication::translate("MainWindow", "Locked", nullptr));
+        btnRefreshAchievements->setText(QCoreApplication::translate("MainWindow", "Refresh", nullptr));
+        btnResetAchievements->setText(QCoreApplication::translate("MainWindow", "Clear achievements", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tabSettings), QCoreApplication::translate("MainWindow", "Settings", nullptr));
         textAbout->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"

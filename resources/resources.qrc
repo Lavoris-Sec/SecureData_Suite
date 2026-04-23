@@ -2,5 +2,8 @@
     <qresource prefix="/">
         <file>cat-eating-chips-windows-xp-meme.gif</file>
         <file>alphabets.txt</file>
+        <file alias="flags/us.xpm">us.xpm</file>
+        <file alias="flags/ru.xpm">ru.xpm</file>
+        <file alias="flags/README.txt">flags_README.txt</file>
     </qresource>
 </RCC>

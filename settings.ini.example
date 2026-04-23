@@ -1,5 +1,24 @@
 [General]
 ; Optional future settings
+SafeMode=false
+Profile=student
+OnboardingDone=false
+
+[Language]
+; en or ru_BY
+Locale=en
+
+[AboutLinks]
+; Replace URLs with your own articles/pages
+Caesar=https://en.wikipedia.org/wiki/Caesar_cipher
+Vigenere=https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher
+Atbash=https://en.wikipedia.org/wiki/Atbash
+XOR=https://en.wikipedia.org/wiki/XOR_cipher
+Permutation=https://en.wikipedia.org/wiki/Transposition_cipher
+SimpleAES=https://en.wikipedia.org/wiki/Advanced_Encryption_Standard
+Huffman=https://en.wikipedia.org/wiki/Huffman_coding
+RSA=https://en.wikipedia.org/wiki/RSA_(cryptosystem)
+LSB=https://en.wikipedia.org/wiki/Steganography
 
 [Easter]
 ; You can use absolute paths:
@@ -9,6 +28,30 @@
 ; Or relative paths from the app folder (recommended):
 ExeA=easter_a.exe
 ExeB=easter_b.exe
+
+; Sponsor button behavior:
+; Modes: none | exe | gif | url | random_gif_or_none | random_exe_or_none | random_gif_or_exe
+SponsorA_Mode=random_gif_or_none
+SponsorA_Exe=sponsor_a.exe
+SponsorA_Gif=cat eating chips Windows XP Meme.gif
+SponsorA_Url=https://example.com/a
+
+SponsorB_Mode=exe
+SponsorB_Exe=sponsor_b.exe
+SponsorB_Gif=cat eating chips Windows XP Meme.gif
+SponsorB_Url=https://example.com/b
+
+; Hidden sponsor C link (triggered by invisible corner button)
+SponsorC_Url=https://example.com/c
+
+; Random router for Sponsor A:
+; when true, Sponsor A opens one random link from SponsorA_Url/SponsorB_Url/SponsorC_Url.
+; Toggle in runtime: Ctrl+Q
+SponsorShuffleEnabled=true
+
+; Hotkeys (fixed in app):
+; Ctrl+E Encrypt, Ctrl+D Decrypt, Ctrl+W Swap, Ctrl+L Language menu
+; Ctrl+1..5 switch tabs (Settings is Ctrl+4, About is Ctrl+5), F1 opens About
 
 [Splash]
 ; Reserved for future use

@@ -57,8 +57,18 @@ template <> constexpr inline auto sds::MainWindow::qt_create_metaobjectdata<qt_m
         "onOpenCache",
         "onLanguageEnglish",
         "onLanguageRussian",
+        "onOpenAbout",
+        "onAboutLinkClicked",
+        "QUrl",
+        "url",
+        "onToggleSponsorShuffle",
+        "onMiniGame",
+        "onAchievementSelected",
+        "onResetAchievements",
+        "onRefreshAchievements",
         "onAboutSecretA",
-        "onAboutSecretB"
+        "onAboutSecretB",
+        "onAboutSecretC"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -96,10 +106,30 @@ template <> constexpr inline auto sds::MainWindow::qt_create_metaobjectdata<qt_m
         QtMocHelpers::SlotData<void()>(17, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onLanguageRussian'
         QtMocHelpers::SlotData<void()>(18, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onAboutSecretA'
+        // Slot 'onOpenAbout'
         QtMocHelpers::SlotData<void()>(19, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onAboutLinkClicked'
+        QtMocHelpers::SlotData<void(const QUrl &)>(20, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 21, 22 },
+        }}),
+        // Slot 'onToggleSponsorShuffle'
+        QtMocHelpers::SlotData<void()>(23, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onMiniGame'
+        QtMocHelpers::SlotData<void()>(24, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onAchievementSelected'
+        QtMocHelpers::SlotData<void(int)>(25, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 6 },
+        }}),
+        // Slot 'onResetAchievements'
+        QtMocHelpers::SlotData<void()>(26, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onRefreshAchievements'
+        QtMocHelpers::SlotData<void()>(27, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onAboutSecretA'
+        QtMocHelpers::SlotData<void()>(28, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onAboutSecretB'
-        QtMocHelpers::SlotData<void()>(20, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(29, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onAboutSecretC'
+        QtMocHelpers::SlotData<void()>(30, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -139,8 +169,16 @@ void sds::MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         case 13: _t->onOpenCache(); break;
         case 14: _t->onLanguageEnglish(); break;
         case 15: _t->onLanguageRussian(); break;
-        case 16: _t->onAboutSecretA(); break;
-        case 17: _t->onAboutSecretB(); break;
+        case 16: _t->onOpenAbout(); break;
+        case 17: _t->onAboutLinkClicked((*reinterpret_cast<std::add_pointer_t<QUrl>>(_a[1]))); break;
+        case 18: _t->onToggleSponsorShuffle(); break;
+        case 19: _t->onMiniGame(); break;
+        case 20: _t->onAchievementSelected((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 21: _t->onResetAchievements(); break;
+        case 22: _t->onRefreshAchievements(); break;
+        case 23: _t->onAboutSecretA(); break;
+        case 24: _t->onAboutSecretB(); break;
+        case 25: _t->onAboutSecretC(); break;
         default: ;
         }
     }
@@ -165,14 +203,14 @@ int sds::MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 18)
+        if (_id < 26)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        _id -= 26;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 18)
+        if (_id < 26)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 18;
+        _id -= 26;
     }
     return _id;
 }
