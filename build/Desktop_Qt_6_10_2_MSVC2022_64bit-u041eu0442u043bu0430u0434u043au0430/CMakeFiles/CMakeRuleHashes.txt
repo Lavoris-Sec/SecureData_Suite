@@ -1,7 +1,0 @@
-# Hashes of file build rules.
-2092db84e51740bea504e7759c09ae84 .qt/rcc/qrc_SecureData_Suite_translations.cpp
-9a0ee7a591655ae292bf3a5295574e1b CMakeFiles/SecureData_Suite_autogen
-9a0ee7a591655ae292bf3a5295574e1b CMakeFiles/SecureData_Suite_lrelease
-167874062d63c742f664ad62055d2a44 CMakeFiles/SecureData_Suite_lupdate
-1ef160550393e705be0cfc2a85818d09 SecureData_Suite_autogen/timestamp
-eb4c730c4b844e9cf7cf3239bf6e155b SecureData_Suite_ru_BY.qm
