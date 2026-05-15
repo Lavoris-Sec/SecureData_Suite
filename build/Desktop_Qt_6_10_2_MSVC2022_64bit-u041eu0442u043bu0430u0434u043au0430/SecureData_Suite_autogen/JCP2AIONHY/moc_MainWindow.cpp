@@ -66,6 +66,9 @@ template <> constexpr inline auto sds::MainWindow::qt_create_metaobjectdata<qt_m
         "onAchievementSelected",
         "onResetAchievements",
         "onRefreshAchievements",
+        "onSecurityModeChanged",
+        "value",
+        "onUiPreferenceChanged",
         "onAboutSecretA",
         "onAboutSecretB",
         "onAboutSecretC"
@@ -124,12 +127,20 @@ template <> constexpr inline auto sds::MainWindow::qt_create_metaobjectdata<qt_m
         QtMocHelpers::SlotData<void()>(26, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onRefreshAchievements'
         QtMocHelpers::SlotData<void()>(27, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onSecurityModeChanged'
+        QtMocHelpers::SlotData<void(int)>(28, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 29 },
+        }}),
+        // Slot 'onUiPreferenceChanged'
+        QtMocHelpers::SlotData<void(int)>(30, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 29 },
+        }}),
         // Slot 'onAboutSecretA'
-        QtMocHelpers::SlotData<void()>(28, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(31, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onAboutSecretB'
-        QtMocHelpers::SlotData<void()>(29, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(32, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onAboutSecretC'
-        QtMocHelpers::SlotData<void()>(30, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(33, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -176,9 +187,11 @@ void sds::MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         case 20: _t->onAchievementSelected((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
         case 21: _t->onResetAchievements(); break;
         case 22: _t->onRefreshAchievements(); break;
-        case 23: _t->onAboutSecretA(); break;
-        case 24: _t->onAboutSecretB(); break;
-        case 25: _t->onAboutSecretC(); break;
+        case 23: _t->onSecurityModeChanged((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 24: _t->onUiPreferenceChanged((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 25: _t->onAboutSecretA(); break;
+        case 26: _t->onAboutSecretB(); break;
+        case 27: _t->onAboutSecretC(); break;
         default: ;
         }
     }
@@ -203,14 +216,14 @@ int sds::MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 26)
+        if (_id < 28)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 26;
+        _id -= 28;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 26)
+        if (_id < 28)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 26;
+        _id -= 28;
     }
     return _id;
 }

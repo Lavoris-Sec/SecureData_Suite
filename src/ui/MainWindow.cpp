@@ -4,6 +4,7 @@
 #include "stego/lsb_steganography.h"
 
 #include <QCoreApplication>
+#include <QApplication>
 #include <QDesktopServices>
 #include <QDialog>
 #include <QDir>
@@ -15,12 +16,18 @@
 #include <QIcon>
 #include <QInputDialog>
 #include <QKeyEvent>
+#include <QCheckBox>
+#include <QClipboard>
 #include <QLabel>
+#include <QLayout>
 #include <QMenu>
 #include <QMessageBox>
 #include <QMovie>
+#include <QPainter>
+#include <QPainterPath>
 #include <QPixmap>
 #include <QProcess>
+#include <QPropertyAnimation>
 #include <QPushButton>
 #include <QRandomGenerator>
 #include <QResizeEvent>
@@ -34,9 +41,98 @@
 #include <QToolButton>
 #include <QUrl>
 #include <QVBoxLayout>
+#include <QEasingCurve>
 #include <algorithm>
 
 namespace sds {
+
+namespace {
+
+QIcon createMainAppIcon() {
+    QPixmap pixmap(64, 64);
+    pixmap.fill(Qt::black);
+
+    QPainter painter(&pixmap);
+    painter.setRenderHint(QPainter::Antialiasing, true);
+
+    QPen pen(QColor("#39ff5a"));
+    pen.setWidth(4);
+    painter.setPen(pen);
+    painter.setBrush(Qt::NoBrush);
+
+    painter.drawRoundedRect(QRectF(16, 28, 32, 24), 5, 5);
+    painter.drawArc(QRectF(18, 8, 28, 28), 20 * 16, 140 * 16);
+
+    painter.setBrush(QColor("#39ff5a"));
+    painter.setPen(Qt::NoPen);
+    painter.drawEllipse(QPointF(32, 38), 3.2, 3.2);
+    painter.drawRoundedRect(QRectF(30.2, 38, 3.6, 8.5), 1.5, 1.5);
+
+    painter.setPen(QColor(0, 0, 0, 90));
+    QFont glyphFont("Consolas", 6, QFont::Bold);
+    painter.setFont(glyphFont);
+    const QString glyphs = "01X$";
+    for (int row = 0; row < 5; ++row) {
+        for (int col = 0; col < 5; ++col) {
+            painter.drawText(QRectF(17 + col * 6, 29 + row * 4.5, 6, 6),
+                             Qt::AlignCenter,
+                             QString(glyphs.at((row + col) % glyphs.size())));
+        }
+    }
+
+    return QIcon(pixmap);
+}
+
+QIcon createSponsorGifIcon() {
+    QPixmap pixmap(64, 64);
+    pixmap.fill(QColor("#6fa8ff"));
+
+    QPainter painter(&pixmap);
+    painter.setRenderHint(QPainter::Antialiasing, true);
+
+    painter.setPen(Qt::NoPen);
+    painter.setBrush(Qt::white);
+    painter.drawEllipse(QRectF(9, 9, 15, 9));
+    painter.drawEllipse(QRectF(18, 7, 18, 11));
+    painter.drawEllipse(QRectF(31, 10, 14, 8));
+    painter.drawEllipse(QRectF(40, 8, 13, 8));
+
+    QPainterPath hill;
+    hill.moveTo(0, 46);
+    hill.quadTo(14, 36, 28, 40);
+    hill.quadTo(44, 44, 64, 28);
+    hill.lineTo(64, 64);
+    hill.lineTo(0, 64);
+    hill.closeSubpath();
+    painter.setBrush(QColor("#68b323"));
+    painter.drawPath(hill);
+
+    painter.setBrush(QColor("#d8cfbf"));
+    painter.drawRoundedRect(QRectF(25, 22, 17, 16), 5, 5);
+
+    QPolygonF leftEar;
+    leftEar << QPointF(27, 24) << QPointF(30, 18) << QPointF(32, 24);
+    painter.drawPolygon(leftEar);
+    QPolygonF rightEar;
+    rightEar << QPointF(35, 24) << QPointF(38, 18) << QPointF(40, 24);
+    painter.drawPolygon(rightEar);
+
+    painter.setBrush(QColor("#2d2d2d"));
+    painter.drawEllipse(QRectF(29, 28, 2.5, 2.5));
+    painter.drawEllipse(QRectF(35, 28, 2.5, 2.5));
+
+    QPen facePen(QColor("#2d2d2d"));
+    facePen.setWidth(1);
+    painter.setPen(facePen);
+    painter.drawArc(QRectF(31, 30, 4, 4), 200 * 16, 140 * 16);
+
+    painter.setPen(QPen(QColor(0, 0, 0, 35), 2));
+    painter.drawLine(QPointF(38, 37), QPointF(45, 42));
+
+    return QIcon(pixmap);
+}
+
+} // namespace
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent)
@@ -45,15 +141,28 @@ MainWindow::MainWindow(QWidget* parent)
     , fileCache_()
     , translationManager_(this) {
     ui->setupUi(this);
+    setWindowIcon(createMainAppIcon());
     applyTheme();
 
-    for (const auto& cipher : cipherManager_.ciphers()) {
-        ui->comboCipher->addItem(cipher->name(), cipher->id());
-    }
+    rebuildCipherList();
 
     connect(ui->btnEncrypt, &QPushButton::clicked, this, &MainWindow::onEncryptClicked);
     connect(ui->btnDecrypt, &QPushButton::clicked, this, &MainWindow::onDecryptClicked);
     connect(ui->btnSwap, &QPushButton::clicked, this, &MainWindow::onSwapClicked);
+    connect(ui->btnCopyInput, &QPushButton::clicked, this, [this]() {
+        const QString text = ui->textInput->toPlainText();
+        QApplication::clipboard()->setText(text);
+        logStatus(text.isEmpty()
+                  ? l10n("Input field copied (empty)", "Поле ввода скопировано (пусто)")
+                  : l10n("Input field copied", "Поле ввода скопировано"));
+    });
+    connect(ui->btnCopyOutput, &QPushButton::clicked, this, [this]() {
+        const QString text = ui->textOutput->toPlainText();
+        QApplication::clipboard()->setText(text);
+        logStatus(text.isEmpty()
+                  ? l10n("Output field copied (empty)", "Поле вывода скопировано (пусто)")
+                  : l10n("Output field copied", "Поле вывода скопировано"));
+    });
     connect(ui->comboCipher, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &MainWindow::onCipherChanged);
     connect(ui->btnRsaGenerate, &QPushButton::clicked, this, &MainWindow::onRsaGenerateClicked);
 
@@ -75,6 +184,11 @@ MainWindow::MainWindow(QWidget* parent)
             this, &MainWindow::onAchievementSelected);
     connect(ui->btnResetAchievements, &QPushButton::clicked, this, &MainWindow::onResetAchievements);
     connect(ui->btnRefreshAchievements, &QPushButton::clicked, this, &MainWindow::onRefreshAchievements);
+    connect(ui->switchSecurityMode, &QCheckBox::stateChanged, this, &MainWindow::onSecurityModeChanged);
+    connect(ui->checkDefaultCacheEnabled, &QCheckBox::stateChanged, this, &MainWindow::onUiPreferenceChanged);
+    connect(ui->checkConfirmResetAchievements, &QCheckBox::stateChanged, this, &MainWindow::onUiPreferenceChanged);
+    connect(ui->checkCompactMode, &QCheckBox::stateChanged, this, &MainWindow::onUiPreferenceChanged);
+    connect(ui->checkReducedAnimations, &QCheckBox::stateChanged, this, &MainWindow::onUiPreferenceChanged);
 
     ui->labelCachePath->setText(fileCache_.cacheDir());
 
@@ -87,6 +201,15 @@ MainWindow::MainWindow(QWidget* parent)
 
     QSettings startupSettings(QDir(QCoreApplication::applicationDirPath()).filePath("settings.ini"), QSettings::IniFormat);
     sponsorShuffleEnabled_ = startupSettings.value("Easter/SponsorShuffleEnabled", true).toBool();
+    const bool cacheByDefault = startupSettings.value("General/CacheByDefault", true).toBool();
+    confirmResetAchievementsEnabled_ = startupSettings.value("General/ConfirmResetAchievements", true).toBool();
+    compactModeEnabled_ = startupSettings.value("General/CompactMode", false).toBool();
+    reducedAnimationsEnabled_ = startupSettings.value("General/ReducedAnimations", false).toBool();
+    ui->checkCache->setChecked(cacheByDefault);
+    ui->checkDefaultCacheEnabled->setChecked(cacheByDefault);
+    ui->checkConfirmResetAchievements->setChecked(confirmResetAchievementsEnabled_);
+    ui->checkCompactMode->setChecked(compactModeEnabled_);
+    ui->checkReducedAnimations->setChecked(reducedAnimationsEnabled_);
     const QString startupLocale = startupSettings.value("Language/Locale", "en").toString().trimmed();
     if (startupLocale == "ru_BY") {
         uiLocale_ = "ru_BY";
@@ -100,6 +223,7 @@ MainWindow::MainWindow(QWidget* parent)
 
     applySafetyMode();
     applyProfileMode();
+    applySecurityModeUi();
     maybeShowOnboarding();
     loadAchievements();
     refreshAchievementsUi();
@@ -129,6 +253,47 @@ const CipherBase* MainWindow::currentCipher() const {
     return cipherManager_.findById(id.toString());
 }
 
+void MainWindow::rebuildCipherList() {
+    const QString previousId = ui->comboCipher->currentData().toString();
+    ui->comboCipher->blockSignals(true);
+    ui->comboCipher->clear();
+
+    for (const auto& cipher : cipherManager_.ciphers()) {
+        const QString id = cipher->id();
+        QString displayName = cipher->name();
+        if (!strongModeEnabled_) {
+            if (id == "simple_aes") {
+                displayName = "AES (edu)";
+            } else if (id == "rsa") {
+                displayName = "RSA (edu)";
+            } else if (id == "xor") {
+                displayName = "XOR (edu)";
+            }
+        } else {
+            if (id == "simple_aes") {
+                displayName = "AES";
+            }
+            if (id == "rsa") {
+                displayName = "RSA";
+            }
+            if (id == "xor") {
+                displayName = "XOR";
+            }
+        }
+        ui->comboCipher->addItem(displayName, id);
+    }
+
+    int idx = ui->comboCipher->findData(previousId);
+    if (idx < 0) {
+        idx = 0;
+    }
+    if (ui->comboCipher->count() > 0) {
+        ui->comboCipher->setCurrentIndex(idx);
+    }
+    ui->comboCipher->blockSignals(false);
+    updateCipherUi();
+}
+
 void MainWindow::updateCipherUi() {
     const CipherBase* cipher = currentCipher();
     if (!cipher) {
@@ -136,14 +301,43 @@ void MainWindow::updateCipherUi() {
     }
 
     ui->lineKey->setEnabled(cipher->requiresKey() && cipher->id() != "rsa");
-    ui->lineKey->setPlaceholderText(cipher->keyHint());
+    ui->lineKey->setPlaceholderText(localizedCipherKeyHint(cipher));
     ui->groupRsa->setVisible(cipher->id() == "rsa");
+}
+
+QString MainWindow::localizedCipherKeyHint(const CipherBase* cipher) const {
+    if (!cipher) {
+        return QString();
+    }
+
+    const QString id = cipher->id();
+    if (id == "caesar") {
+        return l10n("Integer shift (e.g., 3)", "Целочисленный сдвиг (например, 3)");
+    }
+    if (id == "vigenere") {
+        return l10n("Keyword (letters only)", "Ключевое слово (только буквы)");
+    }
+    if (id == "xor") {
+        return l10n("Text key (bytes repeat)", "Текстовый ключ (байты повторяются)");
+    }
+    if (id == "permutation") {
+        return l10n("Keyword (letters or digits)", "Ключевое слово (буквы или цифры)");
+    }
+    if (id == "simple_aes") {
+        return l10n("Key (16+ chars, UTF-8)", "Ключ (16+ символов, UTF-8)");
+    }
+    if (id == "rsa") {
+        return l10n("Public: CNGPUB:...  |  Private: CNGPRIV:...",
+                    "Публичный: CNGPUB:...  |  Приватный: CNGPRIV:...");
+    }
+
+    return cipher->keyHint();
 }
 
 void MainWindow::showError(const QString& message) {
     logStatus(l10n("Error: ", "Ошибка: ") + message);
     checkAchievements("error_event");
-    QMessageBox::warning(this, tr("Error"), message);
+    showToast(message, true, 3200);
 }
 
 void MainWindow::onCipherChanged(int index) {
@@ -204,7 +398,24 @@ void MainWindow::onRsaGenerateClicked() {
     const RsaCipher rsa;
     QString error;
     const int bits = ui->spinRsaBits->value();
+    if (bits > RsaCipher::maxSupportedBits()) {
+        showError(l10n("Strong RSA backend is not available in this build. Install Boost/OpenSSL backend to use 1024+ bits.",
+                       "Strong RSA backend недоступен в этой сборке. Установите Boost/OpenSSL backend для 1024+ бит."));
+        return;
+    }
+
+    const int prevMin = ui->progressAchievement->minimum();
+    const int prevMax = ui->progressAchievement->maximum();
+    const int prevVal = ui->progressAchievement->value();
+    const QString prevFmt = ui->progressAchievement->format();
+    ui->progressAchievement->setRange(0, 0);
+    ui->progressAchievement->setFormat(l10n("Generating RSA...", "Генерация RSA..."));
+    qApp->processEvents();
+
     const RsaKeyPair pair = rsa.generateKeyPair(bits, &error);
+    ui->progressAchievement->setRange(prevMin, prevMax);
+    ui->progressAchievement->setValue(prevVal);
+    ui->progressAchievement->setFormat(prevFmt);
     if (!error.isEmpty()) {
         showError(error);
         return;
@@ -245,7 +456,7 @@ void MainWindow::onStegoEmbed() {
         return;
     }
 
-    QMessageBox::information(this, tr("Done"), tr("Message embedded into the image."));
+    showToast(tr("Message embedded into the image."));
     logStatus(l10n("Message embedded", "Сообщение встроено"));
     checkAchievements("stego_embed");
 }
@@ -327,7 +538,7 @@ void MainWindow::onFileEncrypt() {
         fileCache_.saveEncryptedCopy(inputPath, encrypted, cipher->id(), nullptr, nullptr);
     }
 
-    QMessageBox::information(this, tr("Done"), tr("File encrypted."));
+    showToast(tr("File encrypted."));
     logStatus(l10n("File encrypted", "Файл зашифрован"));
     checkAchievements("file_encrypt");
 }
@@ -372,7 +583,7 @@ void MainWindow::onFileDecrypt() {
     outputFile.write(decrypted);
     outputFile.close();
 
-    QMessageBox::information(this, tr("Done"), tr("File decrypted."));
+    showToast(tr("File decrypted."));
     logStatus(l10n("File decrypted", "Файл расшифрован"));
     checkAchievements("file_decrypt");
 }
@@ -399,6 +610,15 @@ void MainWindow::setupLanguageMenu() {
     languageButton_->setMinimumWidth(150);
     languageButton_->setCursor(Qt::PointingHandCursor);
     languageButton_->raise();
+    ui->textInput->setPlaceholderText(l10n("Enter source text here", "Введите исходный текст"));
+    ui->textOutput->setPlaceholderText(l10n("Result will appear here", "Здесь появится результат"));
+    ui->lineKey->setPlaceholderText(localizedCipherKeyHint(currentCipher()));
+    ui->lineRsaPublic->setPlaceholderText(l10n("Public key will appear here", "Здесь появится публичный ключ"));
+    ui->lineRsaPrivate->setPlaceholderText(l10n("Private key will appear here", "Здесь появится приватный ключ"));
+    ui->lineStegoInput->setPlaceholderText(l10n("Choose input image", "Выберите входное изображение"));
+    ui->lineStegoOutput->setPlaceholderText(l10n("Choose output image path", "Выберите путь для выходного изображения"));
+    ui->textStegoMessage->setPlaceholderText(l10n("Enter hidden message", "Введите скрытое сообщение"));
+
     updateLanguageButtonVisuals();
     updateLanguageButtonPosition();
 }
@@ -409,7 +629,7 @@ void MainWindow::onLanguageEnglish() {
     applyManualTranslations();
     QSettings settings(QDir(QCoreApplication::applicationDirPath()).filePath("settings.ini"), QSettings::IniFormat);
     settings.setValue("Language/Locale", "en");
-    QMessageBox::information(this, l10n("Language", "Язык"), l10n("English language applied.", "Английский язык применён."));
+    showToast(l10n("English language applied.", "Английский язык применён."));
 }
 
 void MainWindow::onLanguageRussian() {
@@ -420,7 +640,7 @@ void MainWindow::onLanguageRussian() {
     applyManualTranslations();
     QSettings settings(QDir(QCoreApplication::applicationDirPath()).filePath("settings.ini"), QSettings::IniFormat);
     settings.setValue("Language/Locale", "ru_BY");
-    QMessageBox::information(this, l10n("Language", "Язык"), l10n("Russian language applied.", "Русский язык применён."));
+    showToast(l10n("Russian language applied.", "Русский язык применён."));
 }
 
 void MainWindow::setupSecretButton() {
@@ -432,6 +652,29 @@ void MainWindow::setupSecretButton() {
     secretButton_->setStyleSheet("background: transparent; border: none;");
     secretButton_->raise();
     connect(secretButton_, &QPushButton::clicked, this, &MainWindow::onAboutSecretC);
+
+    auto* pulseTimer = new QTimer(this);
+    pulseTimer->setInterval(7000);
+    connect(pulseTimer, &QTimer::timeout, this, [this, pulseTimer]() {
+        if (!secretButton_) {
+            return;
+        }
+        const int nextMs = QRandomGenerator::global()->bounded(4500, 9500);
+        pulseTimer->setInterval(nextMs);
+
+        if (QRandomGenerator::global()->bounded(100) < 30) {
+            secretButton_->setStyleSheet(
+                "background: rgba(96, 165, 250, 0.18);"
+                "border: 1px solid rgba(147, 197, 253, 0.55);"
+                "border-radius: 9px;");
+            QTimer::singleShot(850, this, [this]() {
+                if (secretButton_) {
+                    secretButton_->setStyleSheet("background: transparent; border: none;");
+                }
+            });
+        }
+    });
+    pulseTimer->start();
     updateSecretButtonPosition();
 }
 
@@ -500,8 +743,8 @@ void MainWindow::applyManualTranslations() {
     ui->tabWidget->setTabText(ui->tabWidget->indexOf(ui->tabCrypto), l10n("Cryptography", "Криптография"));
     ui->tabWidget->setTabText(ui->tabWidget->indexOf(ui->tabStego), l10n("Steganography", "Стеганография"));
     ui->tabWidget->setTabText(ui->tabWidget->indexOf(ui->tabFiles), l10n("Files", "Файлы"));
-    ui->tabWidget->setTabText(ui->tabWidget->indexOf(ui->tabSettings), l10n("Settings", "Настройки"));
-    ui->tabWidget->setTabText(ui->tabWidget->indexOf(ui->tabAbout), l10n("About", "О программе"));
+    ui->tabWidget->setTabText(ui->tabWidget->indexOf(ui->tabSettings), l10n("Settings (F5)", "Настройки (F5)"));
+    ui->tabWidget->setTabText(ui->tabWidget->indexOf(ui->tabAbout), l10n("About (F1)", "О программе (F1)"));
 
     ui->labelAlgorithm->setText(l10n("Algorithm", "Алгоритм"));
     ui->labelKey->setText(l10n("Key", "Ключ"));
@@ -515,6 +758,10 @@ void MainWindow::applyManualTranslations() {
     ui->btnEncrypt->setText(l10n("Encrypt", "Зашифровать"));
     ui->btnDecrypt->setText(l10n("Decrypt", "Расшифровать"));
     ui->btnSwap->setText(l10n("Swap input/output", "Поменять местами"));
+    ui->btnCopyInput->setText(l10n("Copy", "Копировать"));
+    ui->btnCopyOutput->setText(l10n("Copy", "Копировать"));
+    ui->btnCopyInput->setToolTip(l10n("Copy input text to clipboard", "Скопировать текст из поля ввода"));
+    ui->btnCopyOutput->setToolTip(l10n("Copy result text to clipboard", "Скопировать текст из поля результата"));
 
     ui->labelStegoInput->setText(l10n("Input image", "Входное изображение"));
     ui->labelStegoOutput->setText(l10n("Output image", "Выходное изображение"));
@@ -547,9 +794,21 @@ void MainWindow::applyManualTranslations() {
     ui->btnOpenCache->setToolTip(l10n("Open folder with cached encrypted copies.",
                                       "Открыть папку с кешированными зашифрованными копиями."));
 
+    ui->groupFilePaths->setTitle(l10n("File paths", "Пути к файлам"));
+    ui->groupFileCache->setTitle(l10n("Cache", "Кеш"));
+    ui->groupAchievements->setTitle(l10n("Achievements", "Достижения"));
+    ui->groupSecurityMode->setTitle(l10n("Security mode", "Режим безопасности"));
+    ui->groupPreferences->setTitle(l10n("Preferences", "Предпочтения"));
     ui->labelSettingsHint->setText(l10n("Achievements", "Достижения"));
+    ui->labelModeEducation->setText(l10n("Education mode", "Учебный режим"));
+    ui->labelModeStrong->setText(l10n("Strong mode", "Усиленный режим"));
     ui->btnRefreshAchievements->setText(l10n("Refresh", "Обновить"));
     ui->btnResetAchievements->setText(l10n("Clear achievements", "Очистить достижения"));
+    ui->checkDefaultCacheEnabled->setText(l10n("Enable file cache by default", "Включать кеш файлов по умолчанию"));
+    ui->checkConfirmResetAchievements->setText(l10n("Ask confirmation before clearing achievements",
+                                                    "Запрашивать подтверждение перед очисткой достижений"));
+    ui->checkCompactMode->setText(l10n("Compact mode", "Компактный режим"));
+    ui->checkReducedAnimations->setText(l10n("Reduced animations", "Уменьшенные анимации"));
 
     ui->btnEggA->setText(l10n("Sponsor A", "Спонсор A"));
     ui->btnEggB->setText(l10n("Sponsor B", "Спонсор B"));
@@ -562,9 +821,18 @@ void MainWindow::applyManualTranslations() {
     }
 
     updateLanguageButtonVisuals();
+    ui->textInput->setPlaceholderText(l10n("Enter source text here", "Введите исходный текст"));
+    ui->textOutput->setPlaceholderText(l10n("Result will appear here", "Здесь появится результат"));
+    ui->lineKey->setPlaceholderText(localizedCipherKeyHint(currentCipher()));
+    ui->lineRsaPublic->setPlaceholderText(l10n("Public key will appear here", "Здесь появится публичный ключ"));
+    ui->lineRsaPrivate->setPlaceholderText(l10n("Private key will appear here", "Здесь появится приватный ключ"));
+    ui->lineStegoInput->setPlaceholderText(l10n("Choose input image", "Выберите входное изображение"));
+    ui->lineStegoOutput->setPlaceholderText(l10n("Choose output image path", "Выберите путь для выходного изображения"));
+    ui->textStegoMessage->setPlaceholderText(l10n("Enter hidden message", "Введите скрытое сообщение"));
     applySponsorButtonModes();
     refreshAboutText();
     refreshAchievementsUi();
+    applySecurityModeUi();
 }
 
 void MainWindow::applyButtonLinkStyle(QPushButton* button, bool asLink) {
@@ -602,6 +870,87 @@ void MainWindow::applySponsorButtonModes() {
 void MainWindow::logStatus(const QString& message) {
     const QString stamp = QDateTime::currentDateTime().toString("HH:mm:ss");
     statusBar()->showMessage(QString("[%1] %2").arg(stamp, message), 5000);
+}
+
+void MainWindow::showToast(const QString& message, bool isError, int durationMs) {
+    logStatus(message);
+    if (!toastLabel_) {
+        toastLabel_ = new QLabel(this);
+        toastLabel_->setObjectName("toastLabel");
+        toastLabel_->setWordWrap(true);
+        toastLabel_->setAlignment(Qt::AlignCenter);
+        toastLabel_->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+        toastLabel_->hide();
+    }
+
+    const QString bg = isError ? "#7F1D1D" : "#0F766E";
+    const QString border = isError ? "#F87171" : "#5EEAD4";
+    toastLabel_->setStyleSheet(QString(
+        "QLabel#toastLabel {"
+        " color: #F8FAFC;"
+        " background: %1;"
+        " border: 1px solid %2;"
+        " border-radius: 10px;"
+        " padding: 10px 14px;"
+        " font-weight: 600;"
+        "}").arg(bg, border));
+    toastLabel_->setText(message);
+    toastLabel_->adjustSize();
+
+    const int maxWidth = qMax(320, width() - 40);
+    if (toastLabel_->width() > maxWidth) {
+        toastLabel_->setFixedWidth(maxWidth);
+        toastLabel_->adjustSize();
+    } else {
+        toastLabel_->setFixedWidth(toastLabel_->width());
+    }
+
+    const int x = (width() - toastLabel_->width()) / 2;
+    const int yEnd = height() - statusBar()->height() - toastLabel_->height() - 16;
+    const int yStart = yEnd + 20;
+
+    toastLabel_->move(x, yStart);
+    toastLabel_->setWindowOpacity(0.0);
+    toastLabel_->show();
+    toastLabel_->raise();
+
+    if (reducedAnimationsEnabled_) {
+        toastLabel_->move(x, yEnd);
+        toastLabel_->setWindowOpacity(1.0);
+        QTimer::singleShot(qMax(900, durationMs), this, [this]() {
+            if (toastLabel_) {
+                toastLabel_->hide();
+            }
+        });
+        return;
+    }
+
+    auto* in = new QPropertyAnimation(toastLabel_, "windowOpacity", toastLabel_);
+    in->setDuration(180);
+    in->setStartValue(0.0);
+    in->setEndValue(1.0);
+    in->setEasingCurve(QEasingCurve::OutCubic);
+    in->start(QAbstractAnimation::DeleteWhenStopped);
+
+    auto* slide = new QPropertyAnimation(toastLabel_, "pos", toastLabel_);
+    slide->setDuration(180);
+    slide->setStartValue(QPoint(x, yStart));
+    slide->setEndValue(QPoint(x, yEnd));
+    slide->setEasingCurve(QEasingCurve::OutCubic);
+    slide->start(QAbstractAnimation::DeleteWhenStopped);
+
+    QTimer::singleShot(durationMs, this, [this]() {
+        if (!toastLabel_) {
+            return;
+        }
+        auto* out = new QPropertyAnimation(toastLabel_, "windowOpacity", toastLabel_);
+        out->setDuration(220);
+        out->setStartValue(1.0);
+        out->setEndValue(0.0);
+        out->setEasingCurve(QEasingCurve::InCubic);
+        connect(out, &QPropertyAnimation::finished, toastLabel_, &QLabel::hide);
+        out->start(QAbstractAnimation::DeleteWhenStopped);
+    });
 }
 
 QString MainWindow::achievementFilePath() const {
@@ -667,7 +1016,7 @@ void MainWindow::unlockAchievement(const QString& key, const QString& titleEn, c
     const QString title = l10n("Achievement unlocked", "Достижение открыто");
     const QString text = l10n(titleEn, titleRu);
     logStatus(title + ": " + text);
-    QMessageBox::information(this, title, text);
+    showToast(title + ": " + text);
 }
 
 void MainWindow::checkAchievements(const QString& eventKey) {
@@ -785,8 +1134,6 @@ void MainWindow::onAchievementSelected(int index) {
                     .arg(l10n(d.titleEn, d.titleRu),
                          l10n(d.descEn, d.descRu)));
         } else {
-            ui->labelAchievementStatus->setText(l10n("Locked achievement\nDescription hidden until unlocked.",
-                                                     "Скрытое достижение\nОписание откроется после получения."));
             ui->labelAchievementStatus->setText(
                 QString("<b>%1</b><br/>%2")
                     .arg(l10n("Locked achievement", "Скрытое достижение"),
@@ -798,10 +1145,12 @@ void MainWindow::onAchievementSelected(int index) {
 }
 
 void MainWindow::onResetAchievements() {
-    if (QMessageBox::question(this, l10n("Reset achievements", "Сброс достижений"),
-                              l10n("Clear all achievements and progress?", "Очистить все достижения и прогресс?"))
-        != QMessageBox::Yes) {
-        return;
+    if (confirmResetAchievementsEnabled_) {
+        if (QMessageBox::question(this, l10n("Reset achievements", "Сброс достижений"),
+                                  l10n("Clear all achievements and progress?", "Очистить все достижения и прогресс?"))
+            != QMessageBox::Yes) {
+            return;
+        }
     }
     achievementsState_ = QJsonObject{{"stats", QJsonObject{}}, {"unlocked", QJsonObject{}}};
     saveAchievements();
@@ -813,6 +1162,23 @@ void MainWindow::onRefreshAchievements() {
     loadAchievements();
     refreshAchievementsUi();
     logStatus(l10n("Achievements reloaded", "Достижения обновлены"));
+}
+
+void MainWindow::onUiPreferenceChanged(int value) {
+    Q_UNUSED(value)
+    const bool cacheByDefault = ui->checkDefaultCacheEnabled->isChecked();
+    confirmResetAchievementsEnabled_ = ui->checkConfirmResetAchievements->isChecked();
+    compactModeEnabled_ = ui->checkCompactMode->isChecked();
+    reducedAnimationsEnabled_ = ui->checkReducedAnimations->isChecked();
+    ui->checkCache->setChecked(cacheByDefault);
+
+    QSettings settings(QDir(QCoreApplication::applicationDirPath()).filePath("settings.ini"), QSettings::IniFormat);
+    settings.setValue("General/CacheByDefault", cacheByDefault);
+    settings.setValue("General/ConfirmResetAchievements", confirmResetAchievementsEnabled_);
+    settings.setValue("General/CompactMode", compactModeEnabled_);
+    settings.setValue("General/ReducedAnimations", reducedAnimationsEnabled_);
+
+    applyTheme();
 }
 
 void MainWindow::setupHotkeys() {
@@ -846,6 +1212,9 @@ void MainWindow::setupHotkeys() {
 
     auto* shTab5 = new QShortcut(QKeySequence("Ctrl+5"), this);
     connect(shTab5, &QShortcut::activated, [this]() { ui->tabWidget->setCurrentWidget(ui->tabAbout); });
+
+    auto* shSettingsF5 = new QShortcut(QKeySequence(Qt::Key_F5), this);
+    connect(shSettingsF5, &QShortcut::activated, [this]() { ui->tabWidget->setCurrentWidget(ui->tabSettings); });
 
     auto* shToggleShuffle = new QShortcut(QKeySequence("Ctrl+Q"), this);
     connect(shToggleShuffle, &QShortcut::activated, this, &MainWindow::onToggleSponsorShuffle);
@@ -926,6 +1295,58 @@ void MainWindow::applyProfileMode() {
     }
 }
 
+void MainWindow::applySecurityModeUi() {
+    QSettings settings(QDir(QCoreApplication::applicationDirPath()).filePath("settings.ini"), QSettings::IniFormat);
+    const QString mode = settings.value("General/SecurityMode", "education").toString().trimmed().toLower();
+    strongModeEnabled_ = (mode == "strong");
+
+    if (ui->switchSecurityMode) {
+        ui->switchSecurityMode->blockSignals(true);
+        ui->switchSecurityMode->setChecked(strongModeEnabled_);
+        ui->switchSecurityMode->blockSignals(false);
+    }
+
+    auto applyLabelStyle = [](QLabel* label, bool active) {
+        if (!label) return;
+        label->setStyleSheet(active
+            ? "color:#E2E8F0; font-weight:700; font-size:13px;"
+            : "color:#64748B; font-weight:500; font-size:11px;");
+    };
+
+    applyLabelStyle(ui->labelModeEducation, !strongModeEnabled_);
+    applyLabelStyle(ui->labelModeStrong, strongModeEnabled_);
+
+    if (ui->spinRsaBits) {
+        if (strongModeEnabled_) {
+            ui->spinRsaBits->setRange(1024, 4096);
+            ui->spinRsaBits->setSingleStep(256);
+            if (ui->spinRsaBits->value() < 1024) {
+                ui->spinRsaBits->setValue(2048);
+            }
+        } else {
+            ui->spinRsaBits->setRange(32, 56);
+            ui->spinRsaBits->setSingleStep(4);
+            if (ui->spinRsaBits->value() > 56) {
+                ui->spinRsaBits->setValue(48);
+            }
+        }
+    }
+
+    rebuildCipherList();
+}
+
+void MainWindow::onSecurityModeChanged(int value) {
+    strongModeEnabled_ = (value >= 1);
+    QSettings settings(QDir(QCoreApplication::applicationDirPath()).filePath("settings.ini"), QSettings::IniFormat);
+    settings.setValue("General/SecurityMode", strongModeEnabled_ ? "strong" : "education");
+    applySecurityModeUi();
+    showToast(strongModeEnabled_
+                  ? l10n("Strong mode enabled: AES/XOR/RSA labels switched to strong profile.",
+                         "Усиленный режим включен: метки AES/XOR/RSA переключены на strong-профиль.")
+                  : l10n("Education mode enabled: AES/XOR/RSA labels switched to edu profile.",
+                         "Учебный режим включен: метки AES/XOR/RSA переключены на edu-профиль."));
+}
+
 void MainWindow::onToggleSponsorShuffle() {
     sponsorShuffleEnabled_ = !sponsorShuffleEnabled_;
     QSettings settings(QDir(QCoreApplication::applicationDirPath()).filePath("settings.ini"), QSettings::IniFormat);
@@ -938,8 +1359,31 @@ void MainWindow::onToggleSponsorShuffle() {
 
 void MainWindow::onMiniGame() {
     const QStringList ciphers = {"Caesar", "Vigenere", "Atbash", "XOR", "Permutation", "RSA"};
+    const QStringList hintsEn = {
+        "Hint from About: shifts letters by a fixed key.",
+        "Hint from About: uses a keyword for multiple Caesar shifts.",
+        "Hint from About: mirrors alphabet (A<->Z).",
+        "Hint from About: bitwise operation with key bytes.",
+        "Hint from About: reorders symbol positions using key order.",
+        "Hint from About: asymmetric algorithm with public/private keys."
+    };
+    const QStringList hintsRu = {
+        "Подсказка из About: сдвигает буквы на фиксированный ключ.",
+        "Подсказка из About: использует ключевое слово для серии сдвигов.",
+        "Подсказка из About: зеркалит алфавит (A<->Z).",
+        "Подсказка из About: побитовая операция с байтами ключа.",
+        "Подсказка из About: переставляет позиции символов по ключу.",
+        "Подсказка из About: асимметричный алгоритм с публичным/приватным ключом."
+    };
     const int idx = QRandomGenerator::global()->bounded(ciphers.size());
     const QString answer = ciphers.at(idx);
+    const QString hint = (uiLocale_ == "ru_BY") ? hintsRu.at(idx) : hintsEn.at(idx);
+
+    QMessageBox::information(
+        this,
+        l10n("Mini game hint", "Подсказка мини-игры"),
+        hint
+    );
 
     const QString input = QInputDialog::getText(
         this,
@@ -951,12 +1395,10 @@ void MainWindow::onMiniGame() {
         return;
     }
     if (input.trimmed().compare(answer, Qt::CaseInsensitive) == 0) {
-        QMessageBox::information(this, l10n("Nice!", "Круто!"),
-                                 l10n("Correct guess. Crypto sense +1", "Верно. Крипто-чутье +1"));
+        showToast(l10n("Correct guess. Crypto sense +1", "Верно. Крипто-чутье +1"));
         checkAchievements("mini_game_win");
     } else {
-        QMessageBox::information(this, l10n("Nope", "Неа"),
-                                 l10n("Correct answer: %1", "Правильный ответ: %1").arg(answer));
+        showToast(l10n("Correct answer: %1", "Правильный ответ: %1").arg(answer), true);
     }
 }
 
@@ -995,9 +1437,8 @@ void MainWindow::keyPressEvent(QKeyEvent* event) {
         if (konamiProgress_ >= konami.size()) {
             konamiProgress_ = 0;
             triggerGlitchEffect();
-            QMessageBox::information(this, l10n("Matrix mode", "Режим матрицы"),
-                                     l10n("Konami accepted. Reality has been encrypted.",
-                                          "Конами принят. Реальность зашифрована."));
+            showToast(l10n("Konami accepted. Reality has been encrypted.",
+                           "Конами принят. Реальность зашифрована."));
             checkAchievements("konami");
         }
     } else {
@@ -1088,6 +1529,11 @@ void MainWindow::refreshAboutText() {
         "<p>" + l10n("Panic mode: press Ctrl+Shift+X to quickly clear fields and minimize the window.",
                      "Паник-режим: нажмите Ctrl+Shift+X, чтобы быстро очистить поля и свернуть окно.") + "</p>"
 
+        "<h3>" + l10n("Hotkeys", "Горячие клавиши") + "</h3>"
+        "<p>" + l10n("Ctrl+E encrypt, Ctrl+D decrypt, Ctrl+W swap input/output, Ctrl+L language menu.",
+                     "Ctrl+E шифровать, Ctrl+D расшифровать, Ctrl+W поменять вход/выход, Ctrl+L меню языка.") + "</p>"
+        "<p>" + l10n("Ctrl+1..5 switch tabs, F5 opens Settings, F1 opens About.",
+                     "Ctrl+1..5 переключение вкладок, F5 открывает Настройки, F1 открывает О программе.") + "</p>"
         "<p style='color:#94A3B8;'>" + l10n("Tip: press F1 to open this About tab quickly.",
                                             "Подсказка: нажмите F1, чтобы быстро открыть вкладку «О программе».") + "</p>"
         "</body></html>";
@@ -1154,8 +1600,79 @@ void MainWindow::applyTheme() {
         "}"
         "QToolButton:hover { background: #334155; }"
         "QCheckBox { color: #E2E8F0; }"
+        "QCheckBox#switchSecurityMode::indicator {"
+        " width: 46px;"
+        " height: 24px;"
+        " border-radius: 12px;"
+        " background: #334155;"
+        " border: 1px solid #475569;"
+        "}"
+        "QCheckBox#switchSecurityMode::indicator:checked {"
+        " background: #1D4ED8;"
+        " border: 1px solid #60A5FA;"
+        "}"
+        "QWidget#tabFiles QGroupBox, QWidget#tabSettings QGroupBox {"
+        " border: 1px solid #2F4469;"
+        " border-radius: 10px;"
+        " background: rgba(15, 27, 48, 0.48);"
+        " margin-top: 10px;"
+        " padding-top: 8px;"
+        "}"
+        "QWidget#tabFiles QGroupBox::title, QWidget#tabSettings QGroupBox::title {"
+        " color: #D7E7FF;"
+        " left: 10px;"
+        " padding: 0 6px;"
+        "}"
+        "QWidget#tabFiles QLineEdit, QWidget#tabSettings QComboBox {"
+        " background: #10203A;"
+        " border: 1px solid #37517C;"
+        " color: #E8F0FF;"
+        "}"
+        "QWidget#tabFiles QPushButton, QWidget#tabSettings QPushButton {"
+        " background: qlineargradient(x1:0,y1:0,x2:0,y2:1, stop:0 #2B59C3, stop:1 #274DB2);"
+        " border-radius: 8px;"
+        "}"
+        "QWidget#tabFiles QPushButton:hover, QWidget#tabSettings QPushButton:hover { background: #3567D8; }"
+        "QWidget#tabFiles QProgressBar, QWidget#tabSettings QProgressBar {"
+        " border: 1px solid #35507A;"
+        " border-radius: 6px;"
+        " background: #0F1F37;"
+        " color: #DCE8FF;"
+        " text-align: center;"
+        "}"
+        "QWidget#tabFiles QProgressBar::chunk, QWidget#tabSettings QProgressBar::chunk {"
+        " background: qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #3B82F6, stop:1 #60A5FA);"
+        " border-radius: 5px;"
+        "}"
         "QMenuBar, QMenu { background: #0F172A; color: #E2E8F0; }"
     );
+
+    const int margin = compactModeEnabled_ ? 6 : 10;
+    const int spacing = compactModeEnabled_ ? 6 : 8;
+    const int buttonH = compactModeEnabled_ ? 32 : 36;
+    const auto applyMargins = [margin](QLayout* layout) {
+        if (!layout) return;
+        layout->setContentsMargins(margin, margin, margin, qMax(6, margin - 1));
+    };
+
+    applyMargins(ui->layoutFiles);
+    applyMargins(ui->layoutSettings);
+    applyMargins(ui->layoutAchievementsCard);
+    applyMargins(ui->layoutSecurityModeCard);
+    applyMargins(ui->layoutPreferences);
+    ui->layoutFiles->setSpacing(spacing);
+    ui->layoutSettings->setSpacing(spacing);
+    ui->layoutAchievementButtons->setSpacing(spacing);
+    ui->layoutFileActions->setSpacing(spacing);
+
+    const QList<QPushButton*> compactButtons = {
+        ui->btnFileBrowseInput, ui->btnFileBrowseOutput, ui->btnOpenCache,
+        ui->btnFileEncrypt, ui->btnFileDecrypt, ui->btnRefreshAchievements, ui->btnResetAchievements
+    };
+    for (QPushButton* b : compactButtons) {
+        if (!b) continue;
+        b->setMinimumHeight(buttonH);
+    }
 }
 
 void MainWindow::launchEasterExecutable(const QString& settingKey, const QString& fallbackExe) {
@@ -1188,7 +1705,7 @@ void MainWindow::launchEasterExecutable(const QString& settingKey, const QString
 }
 
 void MainWindow::onAboutSecretA() {
-    if (sponsorShuffleEnabled_) {
+    if (false && sponsorShuffleEnabled_) {
         QSettings settings(QDir(QCoreApplication::applicationDirPath()).filePath("settings.ini"), QSettings::IniFormat);
         const QStringList links = {
             settings.value("Easter/SponsorA_Url", "https://example.com/a").toString(),
@@ -1205,15 +1722,19 @@ void MainWindow::onAboutSecretA() {
         }
     }
 
-    runSponsorAction("SponsorA", "random_gif_or_none",
+    runSponsorAction("SponsorA", "gif",
                      "sponsor_a.exe",
-                     "cat eating chips Windows XP Meme.gif",
+                     "cat-eating-chips-windows-xp-meme.gif",
                      "https://example.com",
                      sponsorALinkMode_);
 }
 
 void MainWindow::onAboutSecretB() {
-    launchEasterExecutable("Easter/ExeB", "easter_b.exe");
+    runSponsorAction("SponsorB", "url",
+                     "sponsor_b.exe",
+                     "cat-eating-chips-windows-xp-meme.gif",
+                     "https://github.com/Lavoris-Sec",
+                     sponsorBLinkMode_);
 }
 
 void MainWindow::onAboutSecretC() {
@@ -1320,11 +1841,33 @@ void MainWindow::runSponsorAction(const QString& sponsorKey, const QString& defa
 void MainWindow::showSponsorGifPopup(const QString& gifPath, const QString& title) {
     QString source = gifPath;
     if (!QFileInfo::exists(source)) {
-        source = ":/cat-eating-chips-windows-xp-meme.gif";
+        const QString appDir = QCoreApplication::applicationDirPath();
+        const QString altLocal = QDir(appDir).filePath("cat-eating-chips-windows-xp-meme.gif");
+        const QString altLocalOld = QDir(appDir).filePath("cat eating chips Windows XP Meme.gif");
+        const QString projectRootGif = QDir(appDir).filePath("../../cat-eating-chips-windows-xp-meme.gif");
+        const QString projectRootGifOld = QDir(appDir).filePath("../../cat eating chips Windows XP Meme.gif");
+        const QString resourcesGif = QDir(appDir).filePath("../../resources/cat-eating-chips-windows-xp-meme.gif");
+        const QString resourcesGifOld = QDir(appDir).filePath("../../resources/cat eating chips Windows XP Meme.gif");
+        if (QFileInfo::exists(altLocal)) {
+            source = altLocal;
+        } else if (QFileInfo::exists(altLocalOld)) {
+            source = altLocalOld;
+        } else if (QFileInfo::exists(projectRootGif)) {
+            source = projectRootGif;
+        } else if (QFileInfo::exists(projectRootGifOld)) {
+            source = projectRootGifOld;
+        } else if (QFileInfo::exists(resourcesGif)) {
+            source = resourcesGif;
+        } else if (QFileInfo::exists(resourcesGifOld)) {
+            source = resourcesGifOld;
+        } else {
+            source = ":/cat-eating-chips-windows-xp-meme.gif";
+        }
     }
 
     QDialog dialog(this);
     dialog.setWindowTitle(title);
+    dialog.setWindowIcon(createSponsorGifIcon());
     dialog.setModal(false);
     dialog.setAttribute(Qt::WA_DeleteOnClose, false);
 
@@ -1336,10 +1879,13 @@ void MainWindow::showSponsorGifPopup(const QString& gifPath, const QString& titl
 
     QMovie movie(source);
     if (!movie.isValid()) {
-        label->setText(l10n("GIF not found or invalid.", "GIF не найден или поврежден."));
-        dialog.resize(360, 120);
-        dialog.exec();
-        return;
+        movie.setFileName(":/cat-eating-chips-windows-xp-meme.gif");
+        if (!movie.isValid()) {
+            label->setText(l10n("GIF not found or invalid.", "GIF не найден или поврежден."));
+            dialog.resize(360, 120);
+            dialog.exec();
+            return;
+        }
     }
 
     label->setMovie(&movie);

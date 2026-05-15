@@ -21,6 +21,7 @@ class QEvent;
 class QKeyEvent;
 class QShortcut;
 class QUrl;
+class QLabel;
 
 namespace sds {
 
@@ -63,6 +64,8 @@ private slots:
     void onAchievementSelected(int index);
     void onResetAchievements();
     void onRefreshAchievements();
+    void onSecurityModeChanged(int value);
+    void onUiPreferenceChanged(int value);
 
     void onAboutSecretA();
     void onAboutSecretB();
@@ -70,7 +73,9 @@ private slots:
 
 private:
     const sds::CipherBase* currentCipher() const;
+    QString localizedCipherKeyHint(const sds::CipherBase* cipher) const;
     void updateCipherUi();
+    void rebuildCipherList();
     void showError(const QString& message);
     void setupLanguageMenu();
     void setupSecretButton();
@@ -88,6 +93,7 @@ private:
     void showRandomFortune();
     void triggerGlitchEffect();
     void logStatus(const QString& message);
+    void showToast(const QString& message, bool isError = false, int durationMs = 2600);
     void checkAchievements(const QString& eventKey);
     QString achievementFilePath() const;
     void loadAchievements();
@@ -102,6 +108,7 @@ private:
     bool isSafeModeEnabled() const;
     void applySafetyMode();
     void applyProfileMode();
+    void applySecurityModeUi();
     void applyTheme();
     void refreshAboutText();
     void launchEasterExecutable(const QString& settingKey, const QString& fallbackExe);
@@ -114,12 +121,17 @@ private:
     QPointer<QToolButton> languageButton_;
     QPointer<QLabel> languageFlagLabel_;
     QPointer<QShortcut> aboutShortcut_;
+    QPointer<QLabel> toastLabel_;
     QString uiLocale_ = "en";
     bool sponsorALinkMode_ = false; // kept for compatibility with runSponsorAction
     bool sponsorBLinkMode_ = false; // kept for compatibility with runSponsorAction
     bool sponsorShuffleEnabled_ = true;
     int konamiProgress_ = 0;
     bool safeModeEnabled_ = false;
+    bool strongModeEnabled_ = false;
+    bool confirmResetAchievementsEnabled_ = true;
+    bool compactModeEnabled_ = false;
+    bool reducedAnimationsEnabled_ = false;
     QJsonObject achievementsState_;
 };
 

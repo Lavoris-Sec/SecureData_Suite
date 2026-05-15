@@ -43,12 +43,20 @@ public:
     QGridLayout *gridCrypto;
     QLabel *labelInput;
     QPushButton *btnSwap;
+    QVBoxLayout *layoutInputArea;
     QPlainTextEdit *textInput;
+    QHBoxLayout *layoutInputActions;
+    QSpacerItem *spacerInputActions;
+    QPushButton *btnCopyInput;
     QLabel *labelAlgorithm;
     QPushButton *btnEncrypt;
     QLabel *labelOutput;
     QLineEdit *lineKey;
+    QVBoxLayout *layoutOutputArea;
     QPlainTextEdit *textOutput;
+    QHBoxLayout *layoutOutputActions;
+    QSpacerItem *spacerOutputActions;
+    QPushButton *btnCopyOutput;
     QGroupBox *groupRsa;
     QGridLayout *gridRsa;
     QLabel *labelRsaPublic;
@@ -74,29 +82,49 @@ public:
     QPushButton *btnStegoEmbed;
     QPushButton *btnStegoExtract;
     QWidget *tabFiles;
-    QGridLayout *gridFiles;
+    QVBoxLayout *layoutFiles;
+    QGroupBox *groupFilePaths;
+    QGridLayout *gridFilePaths;
     QLabel *labelFileInput;
     QLineEdit *lineFileInput;
     QPushButton *btnFileBrowseInput;
     QLabel *labelFileOutput;
     QLineEdit *lineFileOutput;
     QPushButton *btnFileBrowseOutput;
+    QGroupBox *groupFileCache;
+    QGridLayout *gridFileCache;
     QCheckBox *checkCache;
     QLabel *labelCachePath;
     QPushButton *btnOpenCache;
+    QHBoxLayout *layoutFileActions;
     QPushButton *btnFileEncrypt;
     QPushButton *btnFileDecrypt;
+    QSpacerItem *verticalSpacerFilesBottom;
     QWidget *tabSettings;
     QVBoxLayout *layoutSettings;
+    QGroupBox *groupAchievements;
+    QVBoxLayout *layoutAchievementsCard;
     QLabel *labelSettingsHint;
     QComboBox *comboAchievements;
     QProgressBar *progressAchievement;
     QLabel *labelAchievementStatus;
-    QSpacerItem *verticalSpacerAchievementsTopButtons;
     QHBoxLayout *layoutAchievementButtons;
     QPushButton *btnRefreshAchievements;
     QPushButton *btnResetAchievements;
-    QSpacerItem *verticalSpacerSettings;
+    QGroupBox *groupSecurityMode;
+    QHBoxLayout *layoutSecurityModeCard;
+    QSpacerItem *horizontalSpacerModeLeft;
+    QLabel *labelModeEducation;
+    QCheckBox *switchSecurityMode;
+    QLabel *labelModeStrong;
+    QSpacerItem *horizontalSpacerModeRight;
+    QGroupBox *groupPreferences;
+    QVBoxLayout *layoutPreferences;
+    QCheckBox *checkDefaultCacheEnabled;
+    QCheckBox *checkConfirmResetAchievements;
+    QCheckBox *checkCompactMode;
+    QCheckBox *checkReducedAnimations;
+    QSpacerItem *verticalSpacerBottomSettings;
     QWidget *tabAbout;
     QVBoxLayout *layoutAbout;
     QTextBrowser *textAbout;
@@ -112,7 +140,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(980, 720);
+        MainWindow->resize(980, 735);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         gridLayout = new QGridLayout(centralwidget);
@@ -133,10 +161,30 @@ public:
 
         gridCrypto->addWidget(btnSwap, 9, 0, 1, 2);
 
+        layoutInputArea = new QVBoxLayout();
+        layoutInputArea->setSpacing(6);
+        layoutInputArea->setObjectName("layoutInputArea");
         textInput = new QPlainTextEdit(tabCrypto);
         textInput->setObjectName("textInput");
 
-        gridCrypto->addWidget(textInput, 4, 0, 1, 2);
+        layoutInputArea->addWidget(textInput);
+
+        layoutInputActions = new QHBoxLayout();
+        layoutInputActions->setObjectName("layoutInputActions");
+        spacerInputActions = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        layoutInputActions->addItem(spacerInputActions);
+
+        btnCopyInput = new QPushButton(tabCrypto);
+        btnCopyInput->setObjectName("btnCopyInput");
+
+        layoutInputActions->addWidget(btnCopyInput);
+
+
+        layoutInputArea->addLayout(layoutInputActions);
+
+
+        gridCrypto->addLayout(layoutInputArea, 4, 0, 1, 2);
 
         labelAlgorithm = new QLabel(tabCrypto);
         labelAlgorithm->setObjectName("labelAlgorithm");
@@ -158,11 +206,31 @@ public:
 
         gridCrypto->addWidget(lineKey, 1, 1, 1, 1);
 
+        layoutOutputArea = new QVBoxLayout();
+        layoutOutputArea->setSpacing(6);
+        layoutOutputArea->setObjectName("layoutOutputArea");
         textOutput = new QPlainTextEdit(tabCrypto);
         textOutput->setObjectName("textOutput");
         textOutput->setReadOnly(true);
 
-        gridCrypto->addWidget(textOutput, 6, 0, 1, 2);
+        layoutOutputArea->addWidget(textOutput);
+
+        layoutOutputActions = new QHBoxLayout();
+        layoutOutputActions->setObjectName("layoutOutputActions");
+        spacerOutputActions = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        layoutOutputActions->addItem(spacerOutputActions);
+
+        btnCopyOutput = new QPushButton(tabCrypto);
+        btnCopyOutput->setObjectName("btnCopyOutput");
+
+        layoutOutputActions->addWidget(btnCopyOutput);
+
+
+        layoutOutputArea->addLayout(layoutOutputActions);
+
+
+        gridCrypto->addLayout(layoutOutputArea, 6, 0, 1, 2);
 
         groupRsa = new QGroupBox(tabCrypto);
         groupRsa->setObjectName("groupRsa");
@@ -278,120 +346,233 @@ public:
         btnStegoExtract = new QPushButton(tabStego);
         btnStegoExtract->setObjectName("btnStegoExtract");
 
-        gridStego->addWidget(btnStegoExtract, 4, 1, 1, 1);
+        gridStego->addWidget(btnStegoExtract, 4, 1, 1, 2);
 
         tabWidget->addTab(tabStego, QString());
         tabFiles = new QWidget();
         tabFiles->setObjectName("tabFiles");
-        gridFiles = new QGridLayout(tabFiles);
-        gridFiles->setObjectName("gridFiles");
-        labelFileInput = new QLabel(tabFiles);
+        layoutFiles = new QVBoxLayout(tabFiles);
+        layoutFiles->setSpacing(8);
+        layoutFiles->setObjectName("layoutFiles");
+        layoutFiles->setContentsMargins(10, 10, 10, 8);
+        groupFilePaths = new QGroupBox(tabFiles);
+        groupFilePaths->setObjectName("groupFilePaths");
+        gridFilePaths = new QGridLayout(groupFilePaths);
+        gridFilePaths->setObjectName("gridFilePaths");
+        gridFilePaths->setHorizontalSpacing(8);
+        gridFilePaths->setVerticalSpacing(8);
+        labelFileInput = new QLabel(groupFilePaths);
         labelFileInput->setObjectName("labelFileInput");
 
-        gridFiles->addWidget(labelFileInput, 0, 0, 1, 1);
+        gridFilePaths->addWidget(labelFileInput, 0, 0, 1, 1);
 
-        lineFileInput = new QLineEdit(tabFiles);
+        lineFileInput = new QLineEdit(groupFilePaths);
         lineFileInput->setObjectName("lineFileInput");
 
-        gridFiles->addWidget(lineFileInput, 0, 1, 1, 1);
+        gridFilePaths->addWidget(lineFileInput, 0, 1, 1, 1);
 
-        btnFileBrowseInput = new QPushButton(tabFiles);
+        btnFileBrowseInput = new QPushButton(groupFilePaths);
         btnFileBrowseInput->setObjectName("btnFileBrowseInput");
+        btnFileBrowseInput->setMinimumSize(QSize(0, 34));
 
-        gridFiles->addWidget(btnFileBrowseInput, 0, 2, 1, 1);
+        gridFilePaths->addWidget(btnFileBrowseInput, 0, 2, 1, 1);
 
-        labelFileOutput = new QLabel(tabFiles);
+        labelFileOutput = new QLabel(groupFilePaths);
         labelFileOutput->setObjectName("labelFileOutput");
 
-        gridFiles->addWidget(labelFileOutput, 1, 0, 1, 1);
+        gridFilePaths->addWidget(labelFileOutput, 1, 0, 1, 1);
 
-        lineFileOutput = new QLineEdit(tabFiles);
+        lineFileOutput = new QLineEdit(groupFilePaths);
         lineFileOutput->setObjectName("lineFileOutput");
 
-        gridFiles->addWidget(lineFileOutput, 1, 1, 1, 1);
+        gridFilePaths->addWidget(lineFileOutput, 1, 1, 1, 1);
 
-        btnFileBrowseOutput = new QPushButton(tabFiles);
+        btnFileBrowseOutput = new QPushButton(groupFilePaths);
         btnFileBrowseOutput->setObjectName("btnFileBrowseOutput");
+        btnFileBrowseOutput->setMinimumSize(QSize(0, 34));
 
-        gridFiles->addWidget(btnFileBrowseOutput, 1, 2, 1, 1);
+        gridFilePaths->addWidget(btnFileBrowseOutput, 1, 2, 1, 1);
 
-        checkCache = new QCheckBox(tabFiles);
+
+        layoutFiles->addWidget(groupFilePaths);
+
+        groupFileCache = new QGroupBox(tabFiles);
+        groupFileCache->setObjectName("groupFileCache");
+        gridFileCache = new QGridLayout(groupFileCache);
+        gridFileCache->setObjectName("gridFileCache");
+        gridFileCache->setHorizontalSpacing(8);
+        gridFileCache->setVerticalSpacing(8);
+        checkCache = new QCheckBox(groupFileCache);
         checkCache->setObjectName("checkCache");
         checkCache->setChecked(true);
 
-        gridFiles->addWidget(checkCache, 2, 0, 1, 1);
+        gridFileCache->addWidget(checkCache, 0, 0, 1, 1);
 
-        labelCachePath = new QLabel(tabFiles);
+        labelCachePath = new QLabel(groupFileCache);
         labelCachePath->setObjectName("labelCachePath");
 
-        gridFiles->addWidget(labelCachePath, 2, 1, 1, 1);
+        gridFileCache->addWidget(labelCachePath, 0, 1, 1, 1);
 
-        btnOpenCache = new QPushButton(tabFiles);
+        btnOpenCache = new QPushButton(groupFileCache);
         btnOpenCache->setObjectName("btnOpenCache");
+        btnOpenCache->setMinimumSize(QSize(0, 34));
 
-        gridFiles->addWidget(btnOpenCache, 2, 2, 1, 1);
+        gridFileCache->addWidget(btnOpenCache, 0, 2, 1, 1);
 
+
+        layoutFiles->addWidget(groupFileCache);
+
+        layoutFileActions = new QHBoxLayout();
+        layoutFileActions->setSpacing(8);
+        layoutFileActions->setObjectName("layoutFileActions");
         btnFileEncrypt = new QPushButton(tabFiles);
         btnFileEncrypt->setObjectName("btnFileEncrypt");
+        btnFileEncrypt->setMinimumSize(QSize(0, 36));
 
-        gridFiles->addWidget(btnFileEncrypt, 3, 0, 1, 1);
+        layoutFileActions->addWidget(btnFileEncrypt);
 
         btnFileDecrypt = new QPushButton(tabFiles);
         btnFileDecrypt->setObjectName("btnFileDecrypt");
+        btnFileDecrypt->setMinimumSize(QSize(0, 36));
 
-        gridFiles->addWidget(btnFileDecrypt, 3, 1, 1, 1);
+        layoutFileActions->addWidget(btnFileDecrypt);
+
+
+        layoutFiles->addLayout(layoutFileActions);
+
+        verticalSpacerFilesBottom = new QSpacerItem(20, 1, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        layoutFiles->addItem(verticalSpacerFilesBottom);
 
         tabWidget->addTab(tabFiles, QString());
         tabSettings = new QWidget();
         tabSettings->setObjectName("tabSettings");
         layoutSettings = new QVBoxLayout(tabSettings);
+        layoutSettings->setSpacing(8);
         layoutSettings->setObjectName("layoutSettings");
-        labelSettingsHint = new QLabel(tabSettings);
+        layoutSettings->setContentsMargins(10, 10, 10, 8);
+        groupAchievements = new QGroupBox(tabSettings);
+        groupAchievements->setObjectName("groupAchievements");
+        layoutAchievementsCard = new QVBoxLayout(groupAchievements);
+        layoutAchievementsCard->setSpacing(10);
+        layoutAchievementsCard->setObjectName("layoutAchievementsCard");
+        layoutAchievementsCard->setContentsMargins(12, 14, 12, 12);
+        labelSettingsHint = new QLabel(groupAchievements);
         labelSettingsHint->setObjectName("labelSettingsHint");
 
-        layoutSettings->addWidget(labelSettingsHint);
+        layoutAchievementsCard->addWidget(labelSettingsHint);
 
-        comboAchievements = new QComboBox(tabSettings);
+        comboAchievements = new QComboBox(groupAchievements);
         comboAchievements->setObjectName("comboAchievements");
 
-        layoutSettings->addWidget(comboAchievements);
+        layoutAchievementsCard->addWidget(comboAchievements);
 
-        progressAchievement = new QProgressBar(tabSettings);
+        progressAchievement = new QProgressBar(groupAchievements);
         progressAchievement->setObjectName("progressAchievement");
         progressAchievement->setMinimum(0);
         progressAchievement->setMaximum(100);
         progressAchievement->setValue(0);
 
-        layoutSettings->addWidget(progressAchievement);
+        layoutAchievementsCard->addWidget(progressAchievement);
 
-        labelAchievementStatus = new QLabel(tabSettings);
+        labelAchievementStatus = new QLabel(groupAchievements);
         labelAchievementStatus->setObjectName("labelAchievementStatus");
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(labelAchievementStatus->sizePolicy().hasHeightForWidth());
+        labelAchievementStatus->setSizePolicy(sizePolicy);
+        labelAchievementStatus->setMinimumSize(QSize(0, 38));
         labelAchievementStatus->setWordWrap(true);
 
-        layoutSettings->addWidget(labelAchievementStatus);
-
-        verticalSpacerAchievementsTopButtons = new QSpacerItem(20, 80, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
-
-        layoutSettings->addItem(verticalSpacerAchievementsTopButtons);
+        layoutAchievementsCard->addWidget(labelAchievementStatus);
 
         layoutAchievementButtons = new QHBoxLayout();
+        layoutAchievementButtons->setSpacing(8);
         layoutAchievementButtons->setObjectName("layoutAchievementButtons");
-        btnRefreshAchievements = new QPushButton(tabSettings);
+        btnRefreshAchievements = new QPushButton(groupAchievements);
         btnRefreshAchievements->setObjectName("btnRefreshAchievements");
+        btnRefreshAchievements->setMinimumSize(QSize(0, 36));
 
         layoutAchievementButtons->addWidget(btnRefreshAchievements);
 
-        btnResetAchievements = new QPushButton(tabSettings);
+        btnResetAchievements = new QPushButton(groupAchievements);
         btnResetAchievements->setObjectName("btnResetAchievements");
+        btnResetAchievements->setMinimumSize(QSize(0, 36));
 
         layoutAchievementButtons->addWidget(btnResetAchievements);
 
 
-        layoutSettings->addLayout(layoutAchievementButtons);
+        layoutAchievementsCard->addLayout(layoutAchievementButtons);
 
-        verticalSpacerSettings = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
-        layoutSettings->addItem(verticalSpacerSettings);
+        layoutSettings->addWidget(groupAchievements);
+
+        groupSecurityMode = new QGroupBox(tabSettings);
+        groupSecurityMode->setObjectName("groupSecurityMode");
+        layoutSecurityModeCard = new QHBoxLayout(groupSecurityMode);
+        layoutSecurityModeCard->setObjectName("layoutSecurityModeCard");
+        layoutSecurityModeCard->setContentsMargins(12, 12, 12, 12);
+        horizontalSpacerModeLeft = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        layoutSecurityModeCard->addItem(horizontalSpacerModeLeft);
+
+        labelModeEducation = new QLabel(groupSecurityMode);
+        labelModeEducation->setObjectName("labelModeEducation");
+        labelModeEducation->setAlignment(Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter);
+
+        layoutSecurityModeCard->addWidget(labelModeEducation);
+
+        switchSecurityMode = new QCheckBox(groupSecurityMode);
+        switchSecurityMode->setObjectName("switchSecurityMode");
+
+        layoutSecurityModeCard->addWidget(switchSecurityMode);
+
+        labelModeStrong = new QLabel(groupSecurityMode);
+        labelModeStrong->setObjectName("labelModeStrong");
+        labelModeStrong->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+
+        layoutSecurityModeCard->addWidget(labelModeStrong);
+
+        horizontalSpacerModeRight = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        layoutSecurityModeCard->addItem(horizontalSpacerModeRight);
+
+
+        layoutSettings->addWidget(groupSecurityMode);
+
+        groupPreferences = new QGroupBox(tabSettings);
+        groupPreferences->setObjectName("groupPreferences");
+        layoutPreferences = new QVBoxLayout(groupPreferences);
+        layoutPreferences->setSpacing(8);
+        layoutPreferences->setObjectName("layoutPreferences");
+        layoutPreferences->setContentsMargins(12, 12, 12, 12);
+        checkDefaultCacheEnabled = new QCheckBox(groupPreferences);
+        checkDefaultCacheEnabled->setObjectName("checkDefaultCacheEnabled");
+
+        layoutPreferences->addWidget(checkDefaultCacheEnabled);
+
+        checkConfirmResetAchievements = new QCheckBox(groupPreferences);
+        checkConfirmResetAchievements->setObjectName("checkConfirmResetAchievements");
+
+        layoutPreferences->addWidget(checkConfirmResetAchievements);
+
+        checkCompactMode = new QCheckBox(groupPreferences);
+        checkCompactMode->setObjectName("checkCompactMode");
+
+        layoutPreferences->addWidget(checkCompactMode);
+
+        checkReducedAnimations = new QCheckBox(groupPreferences);
+        checkReducedAnimations->setObjectName("checkReducedAnimations");
+
+        layoutPreferences->addWidget(checkReducedAnimations);
+
+
+        layoutSettings->addWidget(groupPreferences);
+
+        verticalSpacerBottomSettings = new QSpacerItem(20, 1, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        layoutSettings->addItem(verticalSpacerBottomSettings);
 
         tabWidget->addTab(tabSettings, QString());
         tabAbout = new QWidget();
@@ -441,7 +622,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -452,9 +633,11 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "SecureData Suite", nullptr));
         labelInput->setText(QCoreApplication::translate("MainWindow", "Input text", nullptr));
         btnSwap->setText(QCoreApplication::translate("MainWindow", "Swap input/output", nullptr));
+        btnCopyInput->setText(QCoreApplication::translate("MainWindow", "Copy", nullptr));
         labelAlgorithm->setText(QCoreApplication::translate("MainWindow", "Algorithm", nullptr));
         btnEncrypt->setText(QCoreApplication::translate("MainWindow", "Encrypt", nullptr));
         labelOutput->setText(QCoreApplication::translate("MainWindow", "Result", nullptr));
+        btnCopyOutput->setText(QCoreApplication::translate("MainWindow", "Copy", nullptr));
         groupRsa->setTitle(QCoreApplication::translate("MainWindow", "RSA keys", nullptr));
         labelRsaPublic->setText(QCoreApplication::translate("MainWindow", "Public (e,n)", nullptr));
         labelRsaPrivate->setText(QCoreApplication::translate("MainWindow", "Private (d,n)", nullptr));
@@ -471,42 +654,56 @@ public:
         btnStegoEmbed->setText(QCoreApplication::translate("MainWindow", "Embed", nullptr));
         btnStegoExtract->setText(QCoreApplication::translate("MainWindow", "Extract", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tabStego), QCoreApplication::translate("MainWindow", "Steganography", nullptr));
+        groupFilePaths->setTitle(QCoreApplication::translate("MainWindow", "File paths", nullptr));
         labelFileInput->setText(QCoreApplication::translate("MainWindow", "Input file", nullptr));
         btnFileBrowseInput->setText(QCoreApplication::translate("MainWindow", "Browse", nullptr));
         labelFileOutput->setText(QCoreApplication::translate("MainWindow", "Output file", nullptr));
         btnFileBrowseOutput->setText(QCoreApplication::translate("MainWindow", "Save as", nullptr));
+        groupFileCache->setTitle(QCoreApplication::translate("MainWindow", "Cache", nullptr));
         checkCache->setText(QCoreApplication::translate("MainWindow", "Save encrypted copy to cache", nullptr));
         labelCachePath->setText(QCoreApplication::translate("MainWindow", "cache", nullptr));
         btnOpenCache->setText(QCoreApplication::translate("MainWindow", "Open cache", nullptr));
         btnFileEncrypt->setText(QCoreApplication::translate("MainWindow", "Encrypt file", nullptr));
         btnFileDecrypt->setText(QCoreApplication::translate("MainWindow", "Decrypt file", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tabFiles), QCoreApplication::translate("MainWindow", "Files", nullptr));
+        groupAchievements->setTitle(QCoreApplication::translate("MainWindow", "Achievements", nullptr));
         labelSettingsHint->setText(QCoreApplication::translate("MainWindow", "Achievements", nullptr));
         labelAchievementStatus->setText(QCoreApplication::translate("MainWindow", "Locked", nullptr));
         btnRefreshAchievements->setText(QCoreApplication::translate("MainWindow", "Refresh", nullptr));
         btnResetAchievements->setText(QCoreApplication::translate("MainWindow", "Clear achievements", nullptr));
+        groupSecurityMode->setTitle(QCoreApplication::translate("MainWindow", "Security mode", nullptr));
+        labelModeEducation->setText(QCoreApplication::translate("MainWindow", "Education mode", nullptr));
+        switchSecurityMode->setText(QString());
+        labelModeStrong->setText(QCoreApplication::translate("MainWindow", "Strong mode", nullptr));
+        groupPreferences->setTitle(QCoreApplication::translate("MainWindow", "Preferences", nullptr));
+        checkDefaultCacheEnabled->setText(QCoreApplication::translate("MainWindow", "Enable file cache by default", nullptr));
+        checkConfirmResetAchievements->setText(QCoreApplication::translate("MainWindow", "Ask confirmation before clearing achievements", nullptr));
+        checkCompactMode->setText(QCoreApplication::translate("MainWindow", "Compact mode", nullptr));
+        checkReducedAnimations->setText(QCoreApplication::translate("MainWindow", "Reduced animations", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tabSettings), QCoreApplication::translate("MainWindow", "Settings", nullptr));
         textAbout->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<h2 style=\" margin:0 0 8px 0;\"><span style=\" font-size:20pt; font-weight:700; color:#93C5FD;\">SecureData Suite</span></h2>\n"
-"<p style=\" margin:0 0 10px 0;\">Educational toolkit for cryptography and steganography experiments.</p>\n"
-"<ul style=\"margin-top: 0px; margin-bottom: 0px;\">\n"
-"<li>8 cryptographic algorithms</li>\n"
-"<li>LSB steganography for PNG/BMP</li>\n"
-"<li>File encryption with automatic cache</li>\n"
-"</ul>\n"
-"<p style=\" margin:10px 0 0 0; color:#94A3B8;\">Hint: there are two hidden utilities below.</p>\n"
-"</body></html>", nullptr));
-        btnEggA->setText(QCoreApplication::translate("MainWindow", "Sponsor A", nullptr));
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<h2 style=\" margin-top:0px; margin-bottom:8px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:20pt; font-weight:700; color:#93c5fd;\">SecureData Suite</span></h2>\n"
+"<p style=\" margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Educational toolkit for cryptography and steganography experiments.</span></p>\n"
+"<ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; "
+                        "margin-right: 0px; -qt-list-indent: 1;\">\n"
+"<li style=\" font-size:10pt;\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">8 cryptographic algorithms</li>\n"
+"<li style=\" font-size:10pt;\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">LSB steganography for PNG/BMP</li>\n"
+"<li style=\" font-size:10pt;\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">File encryption with automatic cache</li></ul>\n"
+"<p style=\" margin-top:10px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#94a3b8;\">Hint: there are two hidden utilities below.</span></p></body></html>", nullptr));
 #if QT_CONFIG(tooltip)
         btnEggA->setToolTip(QCoreApplication::translate("MainWindow", "Launch external utility A", nullptr));
 #endif // QT_CONFIG(tooltip)
-        btnEggB->setText(QCoreApplication::translate("MainWindow", "Sponsor B", nullptr));
+        btnEggA->setText(QCoreApplication::translate("MainWindow", "Sponsor A", nullptr));
 #if QT_CONFIG(tooltip)
         btnEggB->setToolTip(QCoreApplication::translate("MainWindow", "Launch external utility B", nullptr));
 #endif // QT_CONFIG(tooltip)
+        btnEggB->setText(QCoreApplication::translate("MainWindow", "Sponsor B", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tabAbout), QCoreApplication::translate("MainWindow", "About", nullptr));
     } // retranslateUi
 

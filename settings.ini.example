@@ -3,6 +3,7 @@
 SafeMode=false
 Profile=student
 OnboardingDone=false
+SecurityMode=education
 
 [Language]
 ; en or ru_BY
@@ -33,12 +34,12 @@ ExeB=easter_b.exe
 ; Modes: none | exe | gif | url | random_gif_or_none | random_exe_or_none | random_gif_or_exe
 SponsorA_Mode=random_gif_or_none
 SponsorA_Exe=sponsor_a.exe
-SponsorA_Gif=cat eating chips Windows XP Meme.gif
+SponsorA_Gif=cat-eating-chips-windows-xp-meme.gif
 SponsorA_Url=https://example.com/a
 
 SponsorB_Mode=exe
 SponsorB_Exe=sponsor_b.exe
-SponsorB_Gif=cat eating chips Windows XP Meme.gif
+SponsorB_Gif=cat-eating-chips-windows-xp-meme.gif
 SponsorB_Url=https://example.com/b
 
 ; Hidden sponsor C link (triggered by invisible corner button)

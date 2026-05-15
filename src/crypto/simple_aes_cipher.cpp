@@ -1,5 +1,7 @@
 #include "crypto/simple_aes_cipher.h"
 #include <QByteArray>
+#include <QCryptographicHash>
+#include <QRandomGenerator>
 #include <array>
 
 namespace sds {
@@ -268,9 +270,9 @@ static bool deriveKey(const QString& key, std::array<uint8_t, kBlockSize>* out, 
         return false;
     }
 
-    out->fill(0);
-    for (int i = 0; i < kBlockSize && i < bytes.size(); ++i) {
-        (*out)[i] = static_cast<uint8_t>(bytes.at(i));
+    const QByteArray hash = QCryptographicHash::hash(bytes, QCryptographicHash::Sha256);
+    for (int i = 0; i < kBlockSize; ++i) {
+        (*out)[i] = static_cast<uint8_t>(hash.at(i));
     }
     return true;
 }
@@ -311,25 +313,46 @@ QByteArray SimpleAesCipher::encryptBytes(const QByteArray& data, const QString& 
     keyExpansion(keyBytes.data(), roundKeys);
 
     QByteArray padded = padPkcs7(data);
+    QByteArray iv(kBlockSize, 0);
+    for (int i = 0; i < kBlockSize; ++i) {
+        iv[i] = static_cast<char>(QRandomGenerator::global()->bounded(256));
+    }
+
     QByteArray output;
-    output.resize(padded.size());
+    output.reserve(4 + kBlockSize + padded.size());
+    output.append("SDS1", 4);
+    output.append(iv);
+    QByteArray prev = iv;
 
     for (int i = 0; i < padded.size(); i += kBlockSize) {
         uint8_t block[kBlockSize];
         for (int j = 0; j < kBlockSize; ++j) {
-            block[j] = static_cast<uint8_t>(padded.at(i + j));
+            block[j] = static_cast<uint8_t>(padded.at(i + j) ^ prev.at(j));
         }
         encryptBlock(block, roundKeys);
+        QByteArray encBlock(kBlockSize, 0);
         for (int j = 0; j < kBlockSize; ++j) {
-            output[i + j] = static_cast<char>(block[j]);
+            encBlock[j] = static_cast<char>(block[j]);
         }
+        prev = encBlock;
+        output.append(encBlock);
     }
 
     return output;
 }
 
 QByteArray SimpleAesCipher::decryptBytes(const QByteArray& data, const QString& key, QString* error) const {
-    if (data.size() % kBlockSize != 0) {
+    QByteArray payload = data;
+    bool hasHeader = false;
+    QByteArray iv(kBlockSize, 0);
+
+    if (payload.size() >= 4 + kBlockSize && payload.left(4) == "SDS1") {
+        hasHeader = true;
+        iv = payload.mid(4, kBlockSize);
+        payload = payload.mid(4 + kBlockSize);
+    }
+
+    if (payload.size() % kBlockSize != 0) {
         if (error) {
             *error = "Ciphertext size must be a multiple of 16 bytes.";
         }
@@ -345,20 +368,47 @@ QByteArray SimpleAesCipher::decryptBytes(const QByteArray& data, const QString& 
     keyExpansion(keyBytes.data(), roundKeys);
 
     QByteArray output;
-    output.resize(data.size());
+    output.resize(payload.size());
+    QByteArray prev = hasHeader ? iv : QByteArray(kBlockSize, 0);
 
-    for (int i = 0; i < data.size(); i += kBlockSize) {
+    for (int i = 0; i < payload.size(); i += kBlockSize) {
         uint8_t block[kBlockSize];
+        QByteArray cipherBlock(kBlockSize, 0);
         for (int j = 0; j < kBlockSize; ++j) {
-            block[j] = static_cast<uint8_t>(data.at(i + j));
+            const char b = payload.at(i + j);
+            cipherBlock[j] = b;
+            block[j] = static_cast<uint8_t>(b);
         }
         decryptBlock(block, roundKeys);
         for (int j = 0; j < kBlockSize; ++j) {
-            output[i + j] = static_cast<char>(block[j]);
+            output[i + j] = static_cast<char>(block[j] ^ static_cast<uint8_t>(prev.at(j)));
         }
+        prev = cipherBlock;
     }
 
     if (!unpadPkcs7(&output, error)) {
+        if (!hasHeader) {
+            // Backward-compatibility path for legacy ECB payloads (without "SDS1"+IV header).
+            QByteArray legacy;
+            legacy.resize(payload.size());
+            for (int i = 0; i < payload.size(); i += kBlockSize) {
+                uint8_t block[kBlockSize];
+                for (int j = 0; j < kBlockSize; ++j) {
+                    block[j] = static_cast<uint8_t>(payload.at(i + j));
+                }
+                decryptBlock(block, roundKeys);
+                for (int j = 0; j < kBlockSize; ++j) {
+                    legacy[i + j] = static_cast<char>(block[j]);
+                }
+            }
+            QString legacyErr;
+            if (unpadPkcs7(&legacy, &legacyErr)) {
+                if (error) {
+                    error->clear();
+                }
+                return legacy;
+            }
+        }
         return {};
     }
 
