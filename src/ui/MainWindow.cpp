@@ -164,6 +164,9 @@ MainWindow::MainWindow(QWidget* parent)
                   : l10n("Output field copied", "Поле вывода скопировано"));
     });
     connect(ui->comboCipher, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &MainWindow::onCipherChanged);
+    connect(ui->comboFileCipher, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this](int) {
+        updateFileCipherUi();
+    });
     connect(ui->btnRsaGenerate, &QPushButton::clicked, this, &MainWindow::onRsaGenerateClicked);
 
     connect(ui->btnStegoBrowseInput, &QPushButton::clicked, this, &MainWindow::onStegoBrowseInput);
@@ -253,10 +256,49 @@ const CipherBase* MainWindow::currentCipher() const {
     return cipherManager_.findById(id.toString());
 }
 
+const CipherBase* MainWindow::currentFileCipher() const {
+    const QVariant id = ui->comboFileCipher->currentData();
+    return cipherManager_.findById(id.toString());
+}
+
+QString MainWindow::suggestFileOutputPath(const QString& inputPath, bool forDecryption) const {
+    if (inputPath.isEmpty()) {
+        return QString();
+    }
+
+    QFileInfo info(inputPath);
+    const QString dir = info.dir().absolutePath();
+    const QString fileName = info.fileName();
+
+    if (forDecryption) {
+        if (fileName.endsWith(".enc", Qt::CaseInsensitive) && fileName.size() > 4) {
+            QString restored = fileName;
+            restored.chop(4);
+            return QDir(dir).filePath(restored);
+        }
+
+        const QString suffix = info.suffix();
+        const QString baseName = suffix.isEmpty() ? fileName : info.completeBaseName();
+        const QString restoredName = suffix.isEmpty()
+            ? baseName + "_decrypted"
+            : baseName + "_decrypted." + suffix;
+        return QDir(dir).filePath(restoredName);
+    }
+
+    if (fileName.endsWith(".enc", Qt::CaseInsensitive)) {
+        return QDir(dir).filePath(fileName + ".copy");
+    }
+
+    return QDir(dir).filePath(fileName + ".enc");
+}
+
 void MainWindow::rebuildCipherList() {
     const QString previousId = ui->comboCipher->currentData().toString();
+    const QString previousFileId = ui->comboFileCipher->currentData().toString();
     ui->comboCipher->blockSignals(true);
+    ui->comboFileCipher->blockSignals(true);
     ui->comboCipher->clear();
+    ui->comboFileCipher->clear();
 
     for (const auto& cipher : cipherManager_.ciphers()) {
         const QString id = cipher->id();
@@ -281,6 +323,9 @@ void MainWindow::rebuildCipherList() {
             }
         }
         ui->comboCipher->addItem(displayName, id);
+        if (id == "xor" || id == "simple_aes") {
+            ui->comboFileCipher->addItem(displayName, id);
+        }
     }
 
     int idx = ui->comboCipher->findData(previousId);
@@ -290,8 +335,17 @@ void MainWindow::rebuildCipherList() {
     if (ui->comboCipher->count() > 0) {
         ui->comboCipher->setCurrentIndex(idx);
     }
+    int fileIdx = ui->comboFileCipher->findData(previousFileId);
+    if (fileIdx < 0) {
+        fileIdx = 0;
+    }
+    if (ui->comboFileCipher->count() > 0) {
+        ui->comboFileCipher->setCurrentIndex(fileIdx);
+    }
     ui->comboCipher->blockSignals(false);
+    ui->comboFileCipher->blockSignals(false);
     updateCipherUi();
+    updateFileCipherUi();
 }
 
 void MainWindow::updateCipherUi() {
@@ -303,6 +357,16 @@ void MainWindow::updateCipherUi() {
     ui->lineKey->setEnabled(cipher->requiresKey() && cipher->id() != "rsa");
     ui->lineKey->setPlaceholderText(localizedCipherKeyHint(cipher));
     ui->groupRsa->setVisible(cipher->id() == "rsa");
+}
+
+void MainWindow::updateFileCipherUi() {
+    const CipherBase* cipher = currentFileCipher();
+    if (!cipher) {
+        return;
+    }
+
+    ui->lineFileKey->setEnabled(cipher->requiresKey());
+    ui->lineFileKey->setPlaceholderText(localizedCipherKeyHint(cipher));
 }
 
 QString MainWindow::localizedCipherKeyHint(const CipherBase* cipher) const {
@@ -484,18 +548,24 @@ void MainWindow::onFileBrowseInput() {
     const QString file = QFileDialog::getOpenFileName(this, tr("Select file"), QString(), tr("All files (*.*)"));
     if (!file.isEmpty()) {
         ui->lineFileInput->setText(file);
+        const bool looksEncrypted = file.endsWith(".enc", Qt::CaseInsensitive);
+        ui->lineFileOutput->setText(suggestFileOutputPath(file, looksEncrypted));
     }
 }
 
 void MainWindow::onFileBrowseOutput() {
-    const QString file = QFileDialog::getSaveFileName(this, tr("Save file"), QString(), tr("All files (*.*)"));
+    const QString inputPath = ui->lineFileInput->text().trimmed();
+    const QString suggested = !inputPath.isEmpty()
+        ? suggestFileOutputPath(inputPath, inputPath.endsWith(".enc", Qt::CaseInsensitive))
+        : ui->lineFileOutput->text().trimmed();
+    const QString file = QFileDialog::getSaveFileName(this, tr("Save file"), suggested, tr("All files (*.*)"));
     if (!file.isEmpty()) {
         ui->lineFileOutput->setText(file);
     }
 }
 
 void MainWindow::onFileEncrypt() {
-    const CipherBase* cipher = currentCipher();
+    const CipherBase* cipher = currentFileCipher();
     if (!cipher) {
         return;
     }
@@ -520,7 +590,7 @@ void MainWindow::onFileEncrypt() {
     inputFile.close();
 
     QString error;
-    const QByteArray encrypted = cipher->encryptBytes(data, ui->lineKey->text(), &error);
+    const QByteArray encrypted = cipher->encryptBytes(data, ui->lineFileKey->text(), &error);
     if (!error.isEmpty()) {
         showError(error);
         return;
@@ -544,7 +614,7 @@ void MainWindow::onFileEncrypt() {
 }
 
 void MainWindow::onFileDecrypt() {
-    const CipherBase* cipher = currentCipher();
+    const CipherBase* cipher = currentFileCipher();
     if (!cipher) {
         return;
     }
@@ -569,7 +639,7 @@ void MainWindow::onFileDecrypt() {
     inputFile.close();
 
     QString error;
-    const QByteArray decrypted = cipher->decryptBytes(data, ui->lineKey->text(), &error);
+    const QByteArray decrypted = cipher->decryptBytes(data, ui->lineFileKey->text(), &error);
     if (!error.isEmpty()) {
         showError(error);
         return;
@@ -771,6 +841,8 @@ void MainWindow::applyManualTranslations() {
     ui->btnStegoEmbed->setText(l10n("Embed", "Встроить"));
     ui->btnStegoExtract->setText(l10n("Extract", "Извлечь"));
 
+    ui->labelFileAlgorithm->setText(l10n("Algorithm", "Алгоритм"));
+    ui->labelFileKey->setText(l10n("Key", "Ключ"));
     ui->labelFileInput->setText(l10n("Input file", "Входной файл"));
     ui->labelFileOutput->setText(l10n("Output file", "Выходной файл"));
     ui->btnFileBrowseInput->setText(l10n("Browse", "Обзор"));
@@ -781,6 +853,13 @@ void MainWindow::applyManualTranslations() {
     ui->btnFileDecrypt->setText(l10n("Decrypt file", "Расшифровать файл"));
     ui->lineFileInput->setPlaceholderText(l10n("Choose source file to process", "Выберите исходный файл для обработки"));
     ui->lineFileOutput->setPlaceholderText(l10n("Choose path for processed result", "Выберите путь для сохранения результата"));
+    ui->lineFileKey->setPlaceholderText(localizedCipherKeyHint(currentFileCipher()));
+    ui->labelFileHint->setText(l10n(
+        "Encrypt: save to a new name like report.pdf.enc or family_photo.png.enc. "
+        "Decrypt: open report.pdf.enc and save back as report.pdf.",
+        "Шифрование: сохраняйте в новое имя, например report.pdf.enc или family_photo.png.enc. "
+        "Расшифровка: откройте report.pdf.enc и сохраните обратно как report.pdf."
+    ));
     ui->lineFileInput->setToolTip(l10n("Source file: this file will be read.",
                                        "Исходный файл: этот файл будет считан."));
     ui->lineFileOutput->setToolTip(l10n("Destination file: encrypted/decrypted result will be saved here.",
@@ -1627,6 +1706,24 @@ void MainWindow::applyTheme() {
         " background: #10203A;"
         " border: 1px solid #37517C;"
         " color: #E8F0FF;"
+        "}"
+        "QWidget#tabFiles QLineEdit#lineFileKey {"
+        " background: #0F2648;"
+        " border: 2px solid #4C7EF7;"
+        " color: #F8FBFF;"
+        " font-weight: 700;"
+        " padding: 8px 10px;"
+        "}"
+        "QWidget#tabFiles QLineEdit#lineFileKey:focus {"
+        " border: 2px solid #7FB0FF;"
+        " background: #12305A;"
+        "}"
+        "QWidget#tabFiles QLabel#labelFileHint {"
+        " color: #B9CBEA;"
+        " background: rgba(37, 99, 235, 0.10);"
+        " border: 1px solid #355A93;"
+        " border-radius: 8px;"
+        " padding: 10px 12px;"
         "}"
         "QWidget#tabFiles QPushButton, QWidget#tabSettings QPushButton {"
         " background: qlineargradient(x1:0,y1:0,x2:0,y2:1, stop:0 #2B59C3, stop:1 #274DB2);"

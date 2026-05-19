@@ -73,8 +73,11 @@ private slots:
 
 private:
     const sds::CipherBase* currentCipher() const;
+    const sds::CipherBase* currentFileCipher() const;
+    QString suggestFileOutputPath(const QString& inputPath, bool forDecryption) const;
     QString localizedCipherKeyHint(const sds::CipherBase* cipher) const;
     void updateCipherUi();
+    void updateFileCipherUi();
     void rebuildCipherList();
     void showError(const QString& message);
     void setupLanguageMenu();

@@ -311,16 +311,36 @@
             <number>8</number>
            </property>
            <item row="0" column="0">
+            <widget class="QLabel" name="labelFileAlgorithm">
+             <property name="text">
+              <string>Algorithm</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1" colspan="2">
+            <widget class="QComboBox" name="comboFileCipher"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="labelFileKey">
+             <property name="text">
+              <string>Key</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1" colspan="2">
+            <widget class="QLineEdit" name="lineFileKey"/>
+           </item>
+           <item row="2" column="0">
             <widget class="QLabel" name="labelFileInput">
              <property name="text">
               <string>Input file</string>
              </property>
             </widget>
            </item>
-           <item row="0" column="1">
+           <item row="2" column="1">
             <widget class="QLineEdit" name="lineFileInput"/>
            </item>
-           <item row="0" column="2">
+           <item row="2" column="2">
             <widget class="QPushButton" name="btnFileBrowseInput">
              <property name="minimumSize">
               <size>
@@ -333,17 +353,17 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="0">
+           <item row="3" column="0">
             <widget class="QLabel" name="labelFileOutput">
              <property name="text">
               <string>Output file</string>
              </property>
             </widget>
            </item>
-           <item row="1" column="1">
+           <item row="3" column="1">
             <widget class="QLineEdit" name="lineFileOutput"/>
            </item>
-           <item row="1" column="2">
+           <item row="3" column="2">
             <widget class="QPushButton" name="btnFileBrowseOutput">
              <property name="minimumSize">
               <size>
@@ -436,6 +456,16 @@
            </widget>
           </item>
          </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelFileHint">
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="text">
+           <string>For encryption, save to a new name like report.pdf.enc. For decryption, open report.pdf.enc and save back as report.pdf.</string>
+          </property>
+         </widget>
         </item>
         <item>
          <spacer name="verticalSpacerFilesBottom">
